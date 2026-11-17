@@ -1,0 +1,2337 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Ibrahim Ali Portfolio</title>
+<meta name="description" content="Ibrahim Ali — art director portfolio: brand identity, campaigns and packaging.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: white gallery wall. One 1320px column, hairline-divided rows, mono labels index sections; the work carries the colour. */
+:root{
+  --bg:#FFFFFF; --surface:#F5F5F4; --fg:#111111; --muted:#6F6F6B; --line:#E7E6E3;
+  --btn-bg:#111111; --btn-fg:#FFFFFF; --scrim:rgba(255,255,255,.97);
+  --header-bg:rgba(255,255,255,.9); --veil:rgba(255,255,255,.82); --field-line:#D5D4D0; --danger:#B42318; --danger-line:#F1C5C0;
+  --sans:"Geist","Helvetica Neue",Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --max:1320px; --radius:12px;
+  color-scheme:light;
+}
+/* Dark theme: opt-in from the header toggle; light stays the default */
+:root[data-theme="dark"]{
+  --bg:#0B0B0B; --surface:#171716; --fg:#F2F2EF; --muted:#9B9B96; --line:#262625;
+  --btn-bg:#F2F2EF; --btn-fg:#0B0B0B; --scrim:rgba(11,11,11,.97);
+  --header-bg:rgba(11,11,11,.88); --veil:rgba(11,11,11,.8); --field-line:#3A3A38; --danger:#F97066; --danger-line:#5C2A26;
+  color-scheme:dark;
+}
+html,body,header.site,.mobile-nav,.chip,.filters{transition:background-color .3s,color .3s,border-color .3s}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--fg)}
+body{font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+img{display:block}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:var(--max);margin:0 auto;
+  padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+
+/* Header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--header-bg);
+  backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.site.scrolled{border-bottom-color:var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:500;letter-spacing:-.01em}
+nav.main{display:flex;gap:30px}
+nav.main a{color:var(--muted);transition:color .2s}
+nav.main a:hover,nav.main a[aria-current="page"]{color:var(--fg)}
+.menu-btn{display:none;background:none;border:0;padding:8px 0;cursor:pointer}
+.mobile-nav{position:fixed;inset:0;z-index:30;background:var(--bg);display:flex;flex-direction:column;
+  padding:calc(env(safe-area-inset-top,0px) + 10px) max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px))}
+.mobile-nav .top{display:flex;justify-content:space-between;align-items:center;height:54px}
+.mobile-nav ul{list-style:none;margin:48px 0 0;padding:0;display:grid;gap:6px}
+.mobile-nav ul a{font-size:46px;letter-spacing:-.04em;font-weight:500}
+.mobile-nav ul a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
+@media (max-width:720px){nav.main{display:none}.menu-btn{display:block}}
+.hdr-right{display:flex;align-items:center;gap:22px}
+.theme-btn{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px 0 10px;border:1px solid var(--line);border-radius:999px;
+  background:none;cursor:pointer;font-size:13px;color:var(--muted);transition:color .2s,border-color .2s}
+.theme-btn:hover{color:var(--fg);border-color:var(--fg)}
+.theme-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6}
+.theme-btn .i-sun{display:none}
+:root[data-theme="dark"] .theme-btn .i-sun{display:block}
+:root[data-theme="dark"] .theme-btn .i-moon{display:none}
+@media (max-width:420px){.theme-btn .t{display:none}.theme-btn{padding:0 9px}}
+
+/* Type */
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.display{font-size:clamp(54px,9.5vw,136px);line-height:.93;letter-spacing:-.05em;font-weight:500;margin:0;text-wrap:balance}
+.h2{font-size:clamp(36px,5.4vw,68px);line-height:1;letter-spacing:-.04em;font-weight:500;margin:0;text-wrap:balance}
+.h3{font-size:clamp(19px,1.7vw,22px);line-height:1.2;letter-spacing:-.015em;font-weight:500;margin:0}
+.lead{font-size:clamp(20px,2.2vw,27px);line-height:1.3;letter-spacing:-.018em;max-width:32ch;margin:0;text-wrap:pretty}
+.body{color:var(--muted);max-width:62ch;margin:0}
+
+/* Buttons */
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--fg);
+  font-size:15px;cursor:pointer;background:none;transition:transform .2s}
+.btn.solid{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.btn:hover{transform:translateY(-1px)}
+.btn .arr{font-size:13px;transition:transform .2s}
+.btn:hover .arr{transform:translate(2px,-2px)}
+
+/* Sections */
+section.block{padding-block:clamp(80px,10vw,140px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head > div{display:grid;gap:14px}
+.hero{padding-block:clamp(56px,9vw,120px) 0;display:grid;gap:28px}
+.stats{display:flex;gap:clamp(28px,5vw,72px);flex-wrap:wrap;margin-top:clamp(40px,6vw,72px);border-top:1px solid var(--line);padding-top:22px}
+.stats div{display:grid;gap:4px}
+.stats b{font-size:clamp(30px,3.6vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+
+/* Rows */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px;padding-block:22px;border-bottom:1px solid var(--line)}
+.row .v{font-size:18px;letter-spacing:-.01em;min-width:0;overflow-wrap:anywhere}
+a.row{transition:padding .3s}
+a.row:hover{padding-left:10px}
+@media (max-width:640px){.row{grid-template-columns:1fr;gap:6px}}
+
+/* Image slots: placeholder until an image is uploaded */
+.slot{position:relative;width:100%;max-width:100%;aspect-ratio:var(--ar,2/1);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.slot > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot.filled:not(.card-slot) > img{cursor:zoom-in}
+.slot.type{aspect-ratio:1/1}
+.type-grid{gap:24px}
+.type-grid .ph .label{font-size:12px}
+.ph{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:10px;text-align:center;padding:16px;color:var(--muted);
+  background-image:repeating-linear-gradient(135deg,transparent 0 16px,rgba(17,17,17,.028) 16px 17px)}
+.ph svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.4;opacity:.7}
+.ph .hint{font-size:13px}
+.card-slot .ph{gap:6px}
+.card-slot .ph svg{width:24px;height:24px}
+.slot-tools{position:absolute;top:12px;right:12px;display:flex;gap:6px;opacity:0;transition:opacity .2s}
+.slot:hover .slot-tools,.slot:focus-within .slot-tools{opacity:1}
+@media (hover:none){.slot-tools{opacity:1}}
+.tool{height:34px;padding:0 13px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:13px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.tool:hover{border-color:var(--fg)}
+.tool.danger{color:var(--danger);border-color:var(--danger-line)}
+.ref{position:absolute;left:12px;bottom:12px;margin:0;width:min(26%,170px);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px;display:grid;gap:3px}
+.ref img{width:100%;border-radius:5px;display:block}
+.ref figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 2px 1px}
+@media (max-width:640px){.ref{display:none}}
+.slot.busy::after{content:attr(data-status);position:absolute;inset:0;display:grid;place-items:center;background:var(--veil);
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.slot-msg{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:var(--fg);color:var(--bg);font-size:13px;padding:8px 14px;border-radius:999px;max-width:calc(100% - 28px);text-align:center}
+.edit-note{display:flex;gap:10px;align-items:center;margin:0 0 20px;padding:12px 16px;border:1px solid var(--line);border-radius:10px;font-size:14px;color:var(--muted)}
+.edit-note b{color:var(--fg);font-weight:500}
+
+/* Project cards */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 24px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 28px}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.grid,.grid.two{grid-template-columns:1fr;gap:40px}}
+.card{display:grid;gap:14px;align-content:start}
+.card .slot{aspect-ratio:2/1}
+.grid.two .card .slot{aspect-ratio:16/9}
+.card .slot > img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover .slot > img{transform:scale(1.035)}
+.card .meta{display:grid;gap:3px}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card .ctry{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.card .sub{color:var(--muted);font-size:15px}
+
+/* Projects page */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:44px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 64px);z-index:5;
+  background:var(--bg);padding-block:12px;margin-bottom:24px}
+.chip{height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;transition:border-color .2s,background .2s,color .2s}
+.chip .c{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.chip:hover{border-color:var(--fg)}
+.chip[aria-pressed="true"]{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.chip[aria-pressed="true"] .c{color:inherit;opacity:.6}
+.group{padding-block:36px 72px;border-top:1px solid var(--line)}
+.group-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.group-head > div{display:grid;gap:10px}
+.group-head p{color:var(--muted);margin:0;max-width:44ch}
+.empty{border:1px dashed var(--line);border-radius:var(--radius);padding:56px 24px;text-align:center;color:var(--muted);display:grid;gap:8px;justify-items:center}
+
+/* Project detail */
+.back{display:inline-flex;gap:8px;color:var(--muted);font-size:15px;margin-top:36px}
+.back:hover{color:var(--fg)}
+.detail-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 64px;padding-block:40px 48px;align-items:end}
+.detail-head .titles{display:grid;gap:18px}
+.detail-head .display{font-size:clamp(46px,7vw,100px)}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding-block:13px;border-bottom:1px solid var(--line)}
+@media (max-width:860px){.detail-head{grid-template-columns:1fr}}
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px;padding-block:clamp(48px,6vw,80px);}
+.story p{font-size:clamp(19px,1.9vw,23px);line-height:1.45;letter-spacing:-.012em;margin:0 0 1em;max-width:46ch;text-wrap:pretty}
+@media (max-width:760px){.story{grid-template-columns:1fr}}
+.stack{display:grid;gap:clamp(16px,2.2vw,32px)}
+.pager{margin-top:clamp(72px,10vw,120px);display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.pager a{display:grid;gap:8px;padding:28px 0}
+.pager a + a{text-align:right;border-left:1px solid var(--line);padding-left:24px}
+.pager .h3{font-size:clamp(20px,2.4vw,30px)}
+.pager a:hover .h3{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:50;background:var(--scrim);display:grid;place-items:center;
+  padding:calc(env(safe-area-inset-top,0px) + 56px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 56px) max(16px,env(safe-area-inset-left,0px))}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+.lb-btn{position:absolute;background:var(--bg);border:1px solid var(--line);border-radius:999px;height:42px;min-width:42px;padding:0 14px;cursor:pointer}
+.lb-close{top:calc(env(safe-area-inset-top,0px) + 10px);right:max(16px,env(safe-area-inset-right,0px))}
+.lb-prev{left:max(16px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 8px)}
+.lb-next{right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 8px)}
+.lb-count{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);left:50%;transform:translateX(-50%)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(32px,6vw,96px);align-items:start;margin-top:clamp(48px,6vw,80px)}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+form.brief{background:var(--surface);border-radius:var(--radius);padding:clamp(20px,3vw,36px);display:grid;gap:24px}
+.field{display:grid;gap:10px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:520px){.field-row{grid-template-columns:1fr}}
+.field input,.field textarea{width:100%;font:inherit;color:var(--fg);background:transparent;border:0;border-bottom:1px solid var(--field-line);
+  padding:8px 0;outline:none;transition:border-color .2s;border-radius:0}
+.field input:focus,.field textarea:focus{border-color:var(--fg)}
+.field textarea{min-height:110px;resize:vertical}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label{height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--field-line);background:var(--bg);display:inline-flex;align-items:center;font-size:14px;cursor:pointer;transition:all .2s}
+.opts input:checked + label{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.opts input:focus-visible + label{outline:2px solid var(--fg);outline-offset:2px}
+.form-note{font-size:14px;color:var(--muted);margin:0}
+.copy{background:none;border:0;padding:0;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-left:12px}
+.copy:hover{color:var(--fg)}
+.todo{color:var(--muted);font-style:italic}
+
+/* Footer */
+footer.site{margin-top:clamp(96px,12vw,160px);border-top:1px solid var(--line)}
+footer.site .wrap{display:grid;gap:40px;padding-block:56px 40px}
+.foot-cta a{font-size:clamp(30px,5vw,64px);letter-spacing:-.045em;font-weight:500;line-height:1}
+.foot-cta a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+/* Motion */
+.view{animation:enter .6s cubic-bezier(.2,.7,.2,1) both}
+.view .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.view .rise:nth-child(2){animation-delay:.06s}.view .rise:nth-child(3){animation-delay:.12s}.view .rise:nth-child(4){animation-delay:.18s}
+@keyframes enter{from{opacity:.4}to{opacity:1}}
+@keyframes rise{from{opacity:.2;filter:blur(8px);transform:translateY(12px)}to{opacity:1;filter:none;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<header class="site" id="siteHeader">
+  <div class="wrap">
+    <a class="logo" href="#home" id="logo"></a>
+    <div class="hdr-right">
+    <nav class="main" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span class="t">Dark</span>
+      </button>
+      <button class="menu-btn" id="menuOpen" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" hidden>
+  <div class="top"><span class="logo" id="logo2"></span><button class="menu-btn" style="display:block" id="menuClose">Close</button></div>
+  <ul>
+    <li><a href="#home" data-nav="home">Home</a></li>
+    <li><a href="#projects" data-nav="projects">Projects</a></li>
+    <li><a href="#contact" data-nav="contact">Contact</a></li>
+  </ul>
+</div>
+
+<main id="app"></main>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <img id="lbImg" alt="">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">Close</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">←</button>
+  <span class="label lb-count" id="lbCount"></span>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">→</button>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-cta" style="display:grid;gap:14px">
+      <span class="label">Have a project in mind?</span>
+      <a href="#contact">Let’s talk →</a>
+    </div>
+    <div class="foot-bottom">
+      <span id="copyright"></span>
+      <span>Campaigns · Branding · Events · Typography</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   SITE CONTENT — from "Trial 05.pdf"
+   ============================================================ */
+const SITE = {
+  name: "Ibrahim Ali",
+  role: "Art Director",
+  label: "Art Director — Portfolio 2026",
+  greeting: "Hello, I’m",
+  intro: "Explore my work and get to know me.",
+  about: "I am an Art Director with over 12 years of experience creating brand identities, campaigns, and event experiences, combining clear concepts with expressive visuals across diverse sectors.",
+  details: [
+    ["Education", "Computer Science — Menofia University<br>Strategic Marketing — Marketing League Academy"],
+    ["Skills", "Photoshop, Illustrator, InDesign, Framer<br>AI models and tools, Lovable"],
+    ["Recent experience", "Art Director at Centum<br>Art Director at Viola Communication<br>Art Director at Origin Global"],
+    ["Honors & awards", "Campaign Middle East — 2022<br>Packaging of The World — 2020<br>World Brand Design Society — 2020"],
+    ["Brands I’ve worked on", "Burjeel Holdings, NMC, Hankook, ADNOC, DZRT, Makkiyoon, Burjeel Hospitals, DoH Abu Dhabi, OKX, MBank, SWVL, Tiger Chips"]
+  ],
+  email: "hello@ibrahim-ali.com",
+  phone: "+20 10 6115 5707",
+  contactTitle: "Looking forward to connecting with you!",
+  socials: [["Behance", "https://www.behance.net/ibrahimalijromar"], ["LinkedIn", "https://www.linkedin.com/in/ibrahimalijr/"], ["Instagram", "https://www.instagram.com/byhemazzz/"]]
+};
+
+const CATEGORIES = [
+  { id: "campaigns",  name: "Campaigns",  type: "Campaigns", blurb: "Launch and awareness campaigns across print, outdoor, social and screen." },
+  { id: "branding",   name: "Branding",   type: "Branding and visual identity", blurb: "Identities, packaging and visual systems, from wordmark to storefront." },
+  { id: "events",     name: "Events",     type: "Events & activations", blurb: "Event identities and activations that carry a brand into a venue." },
+  { id: "typography", name: "Typography", type: "Typography", blurb: "Arabic lettering explorations, Egypt." }
+];
+
+const FEATURED = ["burjeel-pharmacy-heroes-dont-clock-out-24", "tadweer-group-waste-awareness-campaign", "forza-brand-identity-and-packaging",
+  "burjeel-holdings-burjeel-2-0-corporate-event", "molti-cakezz-dessert-brand-identity-and-packaging", "okx-trading-risk-awareness-campaign"];
+
+const PROJECTS = [
+{
+"slug": "burjeel-pharmacy-ouch-24-7-launch-campaign",
+"cat": "campaigns",
+"client": "Burjeel Pharmacy",
+"title": "24/7 pharmacy launch campaign - Phase 01",
+"country": "United Arab Emirates",
+"medium": "OOH",
+"desc": "A campaign built around a familiar moment: needing relief in the middle of the night. Expressive portraits and a direct availability message bring the urgency of late-night pain to life, positioning Burjeel Pharmacy as a source of care around the clock.",
+"images": [
+[
+"p02-0.jpg",
+1701,
+796
+],
+[
+"p02-1.jpg",
+880,
+503
+],
+[
+"p02-2.jpg",
+888,
+503
+],
+[
+"p02-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "burjeel-pharmacy-heroes-dont-clock-out-24",
+"cat": "campaigns",
+"client": "Burjeel Pharmacy",
+"title": "24/7 pharmacy launch campaign - Phase 02",
+"country": "United Arab Emirates",
+"medium": "OOH",
+"desc": "A campaign that casts round-the-clock pharmacy delivery as an everyday act of heroism. Superhero-inspired hands pass pharmacy essentials to someone at home, turning a doorstep delivery into a memorable visual moment. The line Heroes don't clock out connects the idea with care available day and night.",
+"images": [
+[
+"p03-0.jpg",
+1701,
+796
+],
+[
+"p03-1.jpg",
+880,
+503
+],
+[
+"p03-2.jpg",
+888,
+503
+],
+[
+"p03-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "nmc-al-nahda-pre-ramadan-health-campaign",
+"cat": "campaigns",
+"client": "NMC Al Nahda",
+"title": "Pre-Ramadan health campaign",
+"country": "United Arab Emirates",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "A pre-Ramadan campaign built around the idea of seeing health more clearly. The X-ray-inspired visual treatment connects the seasonal message with diagnostic services, creating a consistent platform for the featured health packages.",
+"images": [
+[
+"p09-0.jpg",
+1701,
+796
+],
+[
+"p09-1.jpg",
+880,
+503
+],
+[
+"p09-2.jpg",
+880,
+503
+],
+[
+"p09-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "makkiyoon-real-estate-quality-of-life-campaign",
+"cat": "campaigns",
+"client": "Makkiyoon Real Estate",
+"title": "Quality of life campaign",
+"country": "Saudi Arabia",
+"medium": "OOH and Social Media",
+"desc": "A real estate campaign that presents home as a setting for a better everyday life. Family moments, outdoor spaces, and community scenes shift the focus from buildings to the experiences that make a place feel like home.",
+"images": [
+[
+"p04-0.jpg",
+1701,
+796
+],
+[
+"p04-1.jpg",
+880,
+503
+],
+[
+"p04-2.jpg",
+888,
+503
+],
+[
+"p04-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "tiger-chips-snack-brand-campaign",
+"cat": "campaigns",
+"client": "Tiger Chips",
+"title": "Snack brand campaign",
+"country": "Egypt",
+"medium": "OOH",
+"desc": "A playful campaign that brings the idea of being in control into everyday snacking. Relaxed characters share their living rooms with big cats, creating an unexpected contrast between wild energy and casual confidence. Bold Arabic lettering connects the executions through one recurring campaign message.",
+"images": [
+[
+"p20-0.jpg",
+1701,
+796
+],
+[
+"p20-1.jpg",
+880,
+503
+],
+[
+"p20-2.jpg",
+888,
+503
+],
+[
+"p20-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "burjeel-cancer-institute-specialist-department-launch-campaign",
+"cat": "campaigns",
+"client": "Burjeel Cancer Institute",
+"title": "Specialist department launch campaign in Sharjah",
+"country": "United Arab Emirates",
+"medium": "OOH and Social Media",
+"desc": "A launch campaign that uses a location pin shaped like an awareness ribbon to connect specialist cancer care with place. A shared visual system gives the featured departments a consistent identity while distinguishing each service through color.",
+"images": [
+[
+"p05-0.jpg",
+1701,
+796
+],
+[
+"p05-1.jpg",
+880,
+503
+],
+[
+"p05-2.jpg",
+888,
+503
+],
+[
+"p05-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "carleton-college-college-brand-launch-campaign",
+"cat": "campaigns",
+"client": "Carleton College",
+"title": "College brand launch campaign",
+"country": "United Arab Emirates",
+"medium": "OOH and Social Media",
+"desc": "A campaign that connects education with the future students imagine for themselves. Aspirational headlines and student-focused imagery frame learning as a step toward personal ambition, leadership, and a wider world of opportunity.",
+"images": [
+[
+"p06-0.jpg",
+1701,
+796
+],
+[
+"p06-1.jpg",
+880,
+503
+],
+[
+"p06-2.jpg",
+888,
+503
+],
+[
+"p06-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "family-consulting-center-family-relationships-awareness-campaign",
+"cat": "campaigns",
+"client": "Family Consulting Center",
+"title": "Family relationships awareness campaign",
+"country": "United Arab Emirates",
+"medium": "OOH",
+"desc": "An awareness campaign exploring the pressure that outside opinions can place on family relationships. Message bubbles surround the central figures, making conflicting advice visible and creating space for a conversation about understanding and support.",
+"images": [
+[
+"p07-0.jpg",
+1701,
+796
+],
+[
+"p07-1.jpg",
+880,
+503
+],
+[
+"p07-2.jpg",
+880,
+503
+],
+[
+"p07-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "tadweer-group-waste-awareness-campaign",
+"cat": "campaigns",
+"client": "Tadweer Group",
+"title": "Waste awareness campaign",
+"country": "United Arab Emirates",
+"medium": "OOH",
+"desc": "Inspired by the viral banana artwork, this campaign uses everyday waste items taped to the wall to make a bold statement: waste is becoming more costly than we think. By visualizing trash as “art,” the campaign challenges viewers to rethink their habits and reinforces the message—reduce, reuse, recycle before we all pay the price.",
+"images": [
+[
+"p08-0.jpg",
+1701,
+796
+],
+[
+"p08-1.jpg",
+880,
+503
+],
+[
+"p08-2.jpg",
+880,
+503
+],
+[
+"p08-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "1dx-health-healthcare-brand-launch-campaign",
+"cat": "campaigns",
+"client": "1DX Health",
+"title": "Healthcare brand launch campaign",
+"country": "United Arab Emirates",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "A healthcare launch campaign that brings a multidisciplinary team into a single visual setting. The composition presents the brand through its people, using a coordinated clinical environment to communicate a connected approach to care.",
+"images": [
+[
+"p11-0.jpg",
+1701,
+796
+],
+[
+"p11-1.jpg",
+880,
+503
+],
+[
+"p11-2.jpg",
+888,
+503
+],
+[
+"p11-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "nmc-al-nahda-orthopedic-care-campaign",
+"cat": "campaigns",
+"client": "NMC Al Nahda",
+"title": "Orthopedic care campaign",
+"country": "United Arab Emirates",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "A campaign that connects orthopedic pain with the activities it interrupts, from sport to work and everyday movement. Direct questions and focused body imagery make the message easy to recognize across different patient situations.",
+"images": [
+[
+"p12-0.jpg",
+1701,
+796
+],
+[
+"p12-1.jpg",
+880,
+503
+],
+[
+"p12-2.jpg",
+880,
+503
+],
+[
+"p12-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "dzrt-corporate-brand-launch-campaign",
+"cat": "campaigns",
+"client": "DZRT Corporate",
+"title": "Brand launch campaign",
+"country": "Saudi Arabia",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "A campaign that places people at the center of a shared visual world. Portraits, smoke imagery, and a repeated Arabic headline connect individual executions into a consistent series with a strong collective tone.",
+"images": [
+[
+"p10-0.jpg",
+1701,
+796
+],
+[
+"p10-1.jpg",
+880,
+503
+],
+[
+"p10-2.jpg",
+880,
+503
+],
+[
+"p10-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "nmc-al-nahda-everyday-strain-awareness-campaign",
+"cat": "campaigns",
+"client": "NMC Al Nahda",
+"title": "Everyday strain awareness campaign",
+"country": "United Arab Emirates",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "An awareness campaign that reveals the weight behind ordinary objects. Oversized school bags, shoes, and fitness equipment turn everyday strain into a clear visual metaphor, linking familiar habits with musculoskeletal health.",
+"images": [
+[
+"p13-0.jpg",
+1701,
+796
+],
+[
+"p13-1.jpg",
+880,
+503
+],
+[
+"p13-2.jpg",
+880,
+503
+],
+[
+"p13-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "al-maryah-community-bank-deposit-rewards-campaign",
+"cat": "campaigns",
+"client": "Al Maryah Community Bank",
+"title": "Deposit rewards campaign",
+"country": "United Arab Emirates",
+"medium": "OOH and Google Ads",
+"desc": "A banking campaign that turns a deposit into a moment of possibility. Everyday lifestyle scenes, prominent reward values, and a consistent green and blue palette give the promotion a clear, recognizable presence across executions.",
+"images": [
+[
+"p14-0.jpg",
+1701,
+796
+],
+[
+"p14-1.jpg",
+880,
+503
+],
+[
+"p14-2.jpg",
+880,
+503
+],
+[
+"p14-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "nmc-al-nahda-ramadan-healthcare-campaign",
+"cat": "campaigns",
+"client": "NMC Al Nahda",
+"title": "Ramadan healthcare campaign",
+"country": "United Arab Emirates",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "A Ramadan campaign that connects seasonal warmth with practical healthcare needs. Crescent-inspired imagery and service- led messages create a shared visual language across the hospital featured packages and specialties.",
+"images": [
+[
+"p15-0.jpg",
+1701,
+796
+],
+[
+"p15-1.jpg",
+880,
+503
+],
+[
+"p15-2.jpg",
+880,
+503
+],
+[
+"p15-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "burjeel-medical-city-fibroid-awareness-campaign",
+"cat": "campaigns",
+"client": "Burjeel Medical City",
+"title": "Fibroid awareness campaign",
+"country": "United Arab Emirates",
+"medium": "OOH and Social Media",
+"desc": "An awareness campaign that uses a floral interpretation of the uterus to bring a sensitive health topic into view. The visual approach creates a recognizable platform for messages about fibroids, symptoms, and seeking professional advice.",
+"images": [
+[
+"p16-0.jpg",
+1701,
+796
+],
+[
+"p16-1.jpg",
+880,
+503
+],
+[
+"p16-2.jpg",
+880,
+503
+],
+[
+"p16-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "central-testing-lab-laboratory-brand-launch-campaign",
+"cat": "campaigns",
+"client": "Central Testing Lab",
+"title": "Laboratory brand launch campaign",
+"country": "United Arab Emirates",
+"medium": "OOH and Social Media",
+"desc": "A launch campaign that makes a broad testing offer easier to visualize. Circular arrangements of materials and samples create a repeatable graphic device, connecting different service categories within one recognizable brand system.",
+"images": [
+[
+"p17-0.jpg",
+1701,
+796
+],
+[
+"p17-1.jpg",
+880,
+503
+],
+[
+"p17-2.jpg",
+880,
+503
+],
+[
+"p17-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "burjeel-breast-center-pink-october-awareness-campaign",
+"cat": "campaigns",
+"client": "Burjeel Breast Center",
+"title": "Pink October awareness campaign",
+"country": "United Arab Emirates",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "A breast cancer awareness campaign that turns booking an appointment into the central creative idea. The familiar Save button becomes a visual prompt, supported by direct messages that encourage audiences to make time for breast health.",
+"images": [
+[
+"p18-0.jpg",
+1701,
+796
+],
+[
+"p18-1.jpg",
+880,
+503
+],
+[
+"p18-2.jpg",
+862,
+413
+],
+[
+"p18-3.jpg",
+861,
+413
+]
+]
+},
+{
+"slug": "burjeel-breast-center-center-of-excellence-recognition",
+"cat": "campaigns",
+"client": "Burjeel Breast Center",
+"title": "Center of Excellence recognition campaign",
+"country": "United Arab Emirates",
+"medium": "OOH, Google and Social Media Ads",
+"desc": "A campaign that puts the patient at the center of a connected care environment. Specialists and clinical spaces form a circular composition, translating the idea of coordinated breast care into a distinctive visual system.",
+"images": [
+[
+"p19-0.jpg",
+1701,
+796
+],
+[
+"p19-1.jpg",
+880,
+503
+],
+[
+"p19-2.jpg",
+888,
+503
+],
+[
+"p19-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "okx-trading-risk-awareness-campaign",
+"cat": "campaigns",
+"client": "OKX",
+"title": "Trading risk awareness campaign",
+"country": "United Arab Emirates",
+"medium": "OOH and Google Ads",
+"desc": "A campaign that uses extreme sports as a metaphor for the risks of trading. Underwater, mountaintop, and skydiving scenes pair adventurous imagery with a reminder to know your limits, bringing a consistent message about risk awareness across the series.",
+"images": [
+[
+"p21-0.jpg",
+1701,
+796
+],
+[
+"p21-1.jpg",
+880,
+503
+],
+[
+"p21-2.jpg",
+888,
+503
+],
+[
+"p21-3.jpg",
+887,
+503
+]
+]
+},
+{
+"slug": "burjeel-breast-center-breast-care-visual-identity",
+"cat": "branding",
+"client": "Burjeel Breast Center",
+"title": "Breast care visual identity refresh",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A visual identity refresh built around a pink and purple butterfly symbol. The identity carries across staff clothing, clinical settings, and event materials, creating a consistent presence for the center across its physical touchpoints.",
+"images": [
+[
+"p23-0.jpg",
+1701,
+659
+],
+[
+"p23-1.jpg",
+550,
+613
+],
+[
+"p23-2.jpg",
+785,
+613
+],
+[
+"p23-3.jpg",
+1001,
+574
+]
+]
+},
+{
+"slug": "organ-ature-natural-cosmetics-brand-identity",
+"cat": "branding",
+"client": "Organature",
+"title": "Natural cosmetics brand identity",
+"country": "Bahrain",
+"medium": "Branding and Visual Identity",
+"desc": "A cosmetics identity that combines a warm coral palette with a simple botanical-inspired mark. Packaging, printed materials, and a reusable bag extend the visual language into everyday encounters with the brand.",
+"images": [
+[
+"p24-0.jpg",
+1024,
+740
+],
+[
+"p24-1.jpg",
+831,
+740
+],
+[
+"p24-2.jpg",
+787,
+613
+],
+[
+"p24-3.jpg",
+1001,
+600
+],
+[
+"p24-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "forza-brand-identity-and-packaging",
+"cat": "branding",
+"client": "Forza",
+"title": "Brand identity and packaging",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A bold identity built around a compact white wordmark and a strong red background. Packaging and retail applications repeat the same graphic language, giving the products a clear and consistent presence on the shelf.",
+"images": [
+[
+"p25-0.jpg",
+1701,
+659
+],
+[
+"p25-1.jpg",
+550,
+613
+],
+[
+"p25-2.jpg",
+785,
+613
+],
+[
+"p25-3.jpg",
+1001,
+574
+]
+]
+},
+{
+"slug": "burjeel-hospital-hospital-identity-refresh",
+"cat": "branding",
+"client": "Burjeel Hospital",
+"title": "Hospital identity refresh",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "An identity refresh centered on the Burjeel wordmark and its distinctive purple palette. Applications across building signage, staff clothing, and hospital environments show how the identity functions at both architectural and personal scales.",
+"images": [
+[
+"p26-0.jpg",
+1701,
+659
+],
+[
+"p26-1.jpg",
+787,
+613
+],
+[
+"p26-2.jpg",
+1001,
+600
+],
+[
+"p26-3.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "sea-la-vie-brand-identity-and-launch",
+"cat": "branding",
+"client": "Sea La Vie",
+"title": "Brand identity and launch applications",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "An identity presentation built around a refined wordmark and a deep blue palette. Architectural imagery, launch screens, and event applications show how the visual language extends from the project name into a larger brand experience.",
+"images": [
+[
+"p27-0.jpg",
+1701,
+659
+],
+[
+"p27-1.jpg",
+550,
+613
+],
+[
+"p27-2.jpg",
+785,
+613
+],
+[
+"p27-3.jpg",
+1001,
+574
+]
+]
+},
+{
+"slug": "monat-bladna-food-retail-identity-and-packaging",
+"cat": "branding",
+"client": "Monat Bladna",
+"title": "Food retail identity and packaging",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A food retail identity that combines expressive Arabic lettering with a red and green palette. The system extends across pantry packaging, shopping materials, and delivery applications, keeping the brand recognizable across different product formats.",
+"images": [
+[
+"p28-0.jpg",
+1024,
+740
+],
+[
+"p28-1.jpg",
+831,
+740
+],
+[
+"p28-2.jpg",
+787,
+613
+],
+[
+"p28-3.jpg",
+1001,
+600
+],
+[
+"p28-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "admo-lifestyle-lifestyle-brand-identity",
+"cat": "branding",
+"client": "ADMO Lifestyle",
+"title": "Lifestyle brand identity",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A restrained identity built around a geometric gold monogram and a deep green palette. Storefront, apparel, and accessory applications give the brand a consistent presence across physical spaces and personal items.",
+"images": [
+[
+"p29-0.jpg",
+1130,
+740
+],
+[
+"p29-1.jpg",
+725,
+740
+],
+[
+"p29-2.jpg",
+550,
+613
+],
+[
+"p29-3.jpg",
+1001,
+543
+],
+[
+"p29-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "burjeel-proud-internal-newsletter-identity",
+"cat": "branding",
+"client": "Burjeel Proud",
+"title": "Internal newsletter identity",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "An internal publication identity that gives employee stories a recognizable visual home. A purple palette, award-inspired motifs, and consistent editorial layouts connect the newsletter cover with its supporting print applications.",
+"images": [
+[
+"p30-0.jpg",
+1024,
+740
+],
+[
+"p30-1.jpg",
+831,
+740
+],
+[
+"p30-2.jpg",
+787,
+613
+],
+[
+"p30-3.jpg",
+1001,
+600
+],
+[
+"p30-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "al-bakkal-mobile-app-grocery-delivery-brand",
+"cat": "branding",
+"client": "Al Bakkal Mobile App",
+"title": "Grocery delivery brand identity",
+"country": "Egypt",
+"medium": "Branding and Visual Identity",
+"desc": "A grocery delivery identity built around expressive Arabic lettering and a vivid red palette. Shopping bags, staff uniforms, outdoor advertising, and delivery materials carry a consistent visual language from the street to the doorstep.",
+"images": [
+[
+"p31-0.jpg",
+1130,
+740
+],
+[
+"p31-1.jpg",
+725,
+740
+],
+[
+"p31-2.jpg",
+550,
+613
+],
+[
+"p31-3.jpg",
+1001,
+543
+],
+[
+"p31-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "molti-cakezz-dessert-brand-identity-and-packaging",
+"cat": "branding",
+"client": "Molti Cakezz",
+"title": "Dessert brand identity and packaging",
+"country": "Egypt",
+"medium": "Branding and Visual Identity",
+"desc": "A playful cake identity that pairs bright pink with purple and lime accents. Bold typography and energetic packaging create a lively visual language across boxes and product labels, reflecting the brand expressive personality.",
+"images": [
+[
+"p32-0.jpg",
+1024,
+740
+],
+[
+"p32-1.jpg",
+831,
+740
+],
+[
+"p32-2.jpg",
+787,
+613
+],
+[
+"p32-3.jpg",
+1001,
+600
+],
+[
+"p32-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "falafel-mtbag-restaurant-brand-identity-and-packaging",
+"cat": "branding",
+"client": "Falafel & Mtbag",
+"title": "Restaurant brand identity and packaging",
+"country": "Saudi Arabia",
+"medium": "Branding and Visual Identity",
+"desc": "A restaurant identity that combines bold Arabic lettering with a vibrant purple and yellow palette. Colorful packaging and graphic patterns bring the system to takeaway boxes, bags, and food presentation.",
+"images": [
+[
+"p33-0.jpg",
+1130,
+740
+],
+[
+"p33-1.jpg",
+725,
+740
+],
+[
+"p33-2.jpg",
+550,
+613
+],
+[
+"p33-3.jpg",
+1001,
+543
+],
+[
+"p33-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "slice-soul-pizza-brand-identity-and-packaging",
+"cat": "branding",
+"client": "Slice & Soul",
+"title": "Pizza brand identity and packaging",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A pizza identity built around an illustrated slice symbol and expressive lettering. Purple packaging, orange accents, and playful typography give boxes, cups, and takeaway materials a consistent, informal personality.",
+"images": [
+[
+"p34-0.jpg",
+1024,
+740
+],
+[
+"p34-1.jpg",
+831,
+740
+],
+[
+"p34-2.jpg",
+787,
+613
+],
+[
+"p34-3.jpg",
+1001,
+600
+],
+[
+"p34-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "habba-creations-creative-brand-identity-and-applications",
+"cat": "branding",
+"client": "Habba Creations",
+"title": "Creative brand identity and applications",
+"country": "Saudi Arabia",
+"medium": "Branding and Visual Identity",
+"desc": "An expressive identity that pairs a flowing Arabic mark with a graphic pattern system. Applications across objects, printed materials, and fabric items explore how the identity can move between functional products and decorative surfaces.",
+"images": [
+[
+"p35-0.jpg",
+1130,
+740
+],
+[
+"p35-1.jpg",
+725,
+740
+],
+[
+"p35-2.jpg",
+550,
+613
+],
+[
+"p35-3.jpg",
+1001,
+543
+],
+[
+"p35-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "colettes-bakery-bakery-brand-identity-and-packaging",
+"cat": "branding",
+"client": "Colette's Cafe",
+"title": "Cafe brand identity and packaging",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A cafe identity built around a handwritten wordmark and a soft purple palette. Takeaway bags, bakery packaging, and drinkware carry the same approachable visual language across the customer experience.",
+"images": [
+[
+"p36-0.jpg",
+1024,
+740
+],
+[
+"p36-1.jpg",
+831,
+740
+],
+[
+"p36-2.jpg",
+787,
+613
+],
+[
+"p36-3.jpg",
+1001,
+600
+],
+[
+"p36-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "design-house-interior-design-studio-identity",
+"cat": "branding",
+"client": "Design House",
+"title": "Interior design studio identity",
+"country": "Qatar",
+"medium": "Branding and Visual Identity",
+"desc": "A studio identity that uses bold Arabic lettering and contrasting colors to create a distinctive presence. The system extends across bags, printed materials, and digital layouts, connecting the studio's physical and online communications.",
+"images": [
+[
+"p37-0.jpg",
+1130,
+740
+],
+[
+"p37-1.jpg",
+725,
+740
+],
+[
+"p37-2.jpg",
+550,
+613
+],
+[
+"p37-3.jpg",
+1001,
+543
+],
+[
+"p37-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "mamaes-pizza-pizza-brand-identity-and-packaging",
+"cat": "branding",
+"client": "Mama's Pizza",
+"title": "Pizza brand identity and packaging",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A pizza identity that combines a warm red wordmark with illustrated food motifs. Cream-colored boxes, bags, and serving materials create a coordinated packaging system with a welcoming, familiar character.",
+"images": [
+[
+"p38-0.jpg",
+1024,
+740
+],
+[
+"p38-1.jpg",
+831,
+740
+],
+[
+"p38-2.jpg",
+787,
+613
+],
+[
+"p38-3.jpg",
+1001,
+600
+],
+[
+"p38-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "mtbag-gourmet-restaurant-brand-identity-and-packaging",
+"cat": "branding",
+"client": "Mtbag Gourmet",
+"title": "Restaurant brand identity and packaging",
+"country": "Saudi Arabia",
+"medium": "Branding and Visual Identity",
+"desc": "A restaurant identity that pairs expressive Arabic lettering with mint and magenta. Illustrated food motifs and contrasting color blocks extend across takeaway boxes and bags, creating a recognizable packaging family.",
+"images": [
+[
+"p39-0.jpg",
+1130,
+740
+],
+[
+"p39-1.jpg",
+725,
+740
+],
+[
+"p39-2.jpg",
+550,
+613
+],
+[
+"p39-3.jpg",
+1001,
+543
+],
+[
+"p39-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "toffee-coffee-coffee-brand-identity",
+"cat": "branding",
+"client": "Toffee Coffee",
+"title": "Coffee brand identity",
+"country": "Qatar",
+"medium": "Branding and Visual Identity",
+"desc": "A coffee shop identity with a playful wordmark, a saturated blue base, and pastel accents. Cups, printed materials, and environmental graphics share an informal visual language designed to feel sociable and expressive.",
+"images": [
+[
+"p40-0.jpg",
+1024,
+740
+],
+[
+"p40-1.jpg",
+831,
+740
+],
+[
+"p40-2.jpg",
+787,
+613
+],
+[
+"p40-3.jpg",
+1001,
+600
+],
+[
+"p40-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "tamsheya-platform-brand-identity-and-environmental-applications",
+"cat": "branding",
+"client": "Tamsheya Platform",
+"title": "Brand identity and environmental applications",
+"country": "Egypt",
+"medium": "Branding and Visual Identity",
+"desc": "A visual identity built around an energetic Arabic wordmark and a dark green palette. Figures in motion and bright accents extend the system across digital and environmental applications, giving the work a consistent visual character.",
+"images": [
+[
+"p41-0.jpg",
+1130,
+740
+],
+[
+"p41-1.jpg",
+725,
+740
+],
+[
+"p41-2.jpg",
+550,
+613
+],
+[
+"p41-3.jpg",
+1001,
+543
+],
+[
+"p41-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "burjeel-cancer-institute-cancer-care-visual-identity",
+"cat": "branding",
+"client": "Burjeel Cancer Institute",
+"title": "Cancer care rebranding",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A healthcare rebrand built around a circular symbol and a clear typographic lockup. The system extends to clinical clothing, signage, and patient-facing materials, maintaining a consistent appearance across the care environment.",
+"images": [
+[
+"p42-0.jpg",
+1701,
+659
+],
+[
+"p42-1.jpg",
+787,
+613
+],
+[
+"p42-2.jpg",
+1001,
+600
+],
+[
+"p42-3.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "vacost-electronics-wholesale-brand-identity",
+"cat": "branding",
+"client": "Vacost",
+"title": "Electronics wholesale brand identity",
+"country": "Saudi Arabia",
+"medium": "Branding and Visual Identity",
+"desc": "An electronics identity that pairs a sharp wordmark with a high-contrast black and lime palette. Repeated packaging elements and bilingual branding create a consistent system across accessories and retail displays.",
+"images": [
+[
+"p43-0.jpg",
+1701,
+659
+],
+[
+"p43-1.jpg",
+550,
+613
+],
+[
+"p43-2.jpg",
+1001,
+543
+],
+[
+"p43-3.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "sprint-academy-athletics-academy-brand-identity",
+"cat": "branding",
+"client": "Sprint Academy",
+"title": "Athletics academy brand identity",
+"country": "Qatar",
+"medium": "Branding and Visual Identity",
+"desc": "An athletics identity built around a dynamic wordmark and a blue and green palette. Trackside graphics, uniforms, and event materials bring the identity into training environments and connect the brand with movement.",
+"images": [
+[
+"p44-0.jpg",
+1024,
+740
+],
+[
+"p44-1.jpg",
+831,
+740
+],
+[
+"p44-2.jpg",
+787,
+613
+],
+[
+"p44-3.jpg",
+1001,
+600
+],
+[
+"p44-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "wamda-brand-identity-and-community-applications",
+"cat": "branding",
+"client": "Wamda",
+"title": "Brand identity and community applications",
+"country": "United Arab Emirates",
+"medium": "Branding and Visual Identity",
+"desc": "A visual identity built around an illustrated symbol and a purple palette. Printed materials, event signage, and everyday objects demonstrate how the system can support a consistent presence across a community setting.",
+"images": [
+[
+"p45-0.jpg",
+1130,
+740
+],
+[
+"p45-1.jpg",
+725,
+740
+],
+[
+"p45-2.jpg",
+550,
+613
+],
+[
+"p45-3.jpg",
+1001,
+543
+],
+[
+"p45-4.jpg",
+725,
+613
+]
+]
+},
+{
+"slug": "marzoug-retail-app-brand-identity",
+"cat": "branding",
+"client": "Marzoug",
+"title": "Retail app brand identity",
+"country": "Saudi Arabia",
+"medium": "Branding and Visual Identity",
+"desc": "An app brand identity that combines rounded bilingual lettering with a purple and yellow palette. Illustrated graphics extend the system across a mobile presentation, delivery vehicle, and packaging applications.",
+"images": [
+[
+"p46-0.jpg",
+1024,
+740
+],
+[
+"p46-1.jpg",
+831,
+740
+],
+[
+"p46-2.jpg",
+787,
+613
+],
+[
+"p46-3.jpg",
+1001,
+600
+],
+[
+"p46-4.jpg",
+595,
+613
+]
+]
+},
+{
+"slug": "burjeel-holdings-burjeel-2-0-corporate-event",
+"cat": "events",
+"client": "Burjeel Holdings",
+"title": "Corporate event identity and activation",
+"country": "United Arab Emirates",
+"medium": "Event Identity",
+"desc": "An event identity built around the Burjeel 2.0 theme and a luminous purple visual world. Invitations, branded objects, photo opportunities, and venue graphics extend the key visual into a coordinated attendee experience.\n\nLarge-scale applications extend the event identity across screens, stage environments, and branded installations. A consistent purple palette and flowing graphics connect the presentation content with the wider venue experience.",
+"images": [
+[
+"p48-0.jpg",
+1701,
+796
+],
+[
+"p48-1.jpg",
+880,
+503
+],
+[
+"p48-2.jpg",
+880,
+503
+],
+[
+"p48-3.jpg",
+880,
+503
+],
+[
+"p49-0.jpg",
+1701,
+796
+],
+[
+"p49-1.jpg",
+880,
+503
+],
+[
+"p49-2.jpg",
+880,
+503
+],
+[
+"p49-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "nmc-al-nahda-community-run-30-30",
+"cat": "events",
+"client": "NMC Al Nahda",
+"title": "Community fitness event identity",
+"country": "United Arab Emirates",
+"medium": "Event Identity",
+"desc": "An event identity that combines energetic typography with a clear blue palette. Branded running shirts and supporting materials carry the visual system into the live event, giving participants a shared identity on the day.",
+"images": [
+[
+"p50-0.jpg",
+1701,
+796
+],
+[
+"p50-1.jpg",
+880,
+503
+],
+[
+"p50-2.jpg",
+880,
+503
+],
+[
+"p50-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "burjeel-eye-institute-you-niverse-eye-care",
+"cat": "events",
+"client": "Burjeel Eye Institute",
+"title": "Eye care event identity and activation",
+"country": "United Arab Emirates",
+"medium": "Event Identity",
+"desc": "An eye care event concept that places an iris within the word YOU, making the audience central to the visual idea. The blue visual system extends across presentation screens, reception graphics, and display structures.",
+"images": [
+[
+"p51-0.jpg",
+1701,
+796
+],
+[
+"p51-1.jpg",
+880,
+503
+],
+[
+"p51-2.jpg",
+880,
+503
+],
+[
+"p51-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "creator-summit-summit-event-identity-and-venue",
+"cat": "events",
+"client": "Creator Summit",
+"title": "Summit event identity and venue branding",
+"country": "Lebanon",
+"medium": "Event Identity",
+"desc": "A summit identity that combines a soft gradient palette with bold event typography. Registration counters, wayfinding, backdrops, and display graphics translate the visual system into a coordinated venue experience.",
+"images": [
+[
+"p52-0.jpg",
+1701,
+796
+],
+[
+"p52-1.jpg",
+880,
+503
+],
+[
+"p52-2.jpg",
+880,
+503
+],
+[
+"p52-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "burjeel-breast-center-pink-october-awareness-activation",
+"cat": "events",
+"client": "Burjeel Breast Center",
+"title": "Pink October awareness activation",
+"country": "United Arab Emirates",
+"medium": "Event Identity",
+"desc": "A breast health activation that carries the campaign's pink visual language into a physical setting. Branded display areas, refreshments, and supporting materials connect the awareness message with an in-person audience experience.",
+"images": [
+[
+"p53-0.jpg",
+1701,
+796
+],
+[
+"p53-1.jpg",
+880,
+503
+],
+[
+"p53-2.jpg",
+880,
+503
+],
+[
+"p53-3.jpg",
+880,
+503
+]
+]
+},
+{
+"slug": "swvl-celebration-event-branding",
+"cat": "events",
+"client": "SWVL",
+"title": "Celebration event branding",
+"country": "Egypt",
+"medium": "Event Identity",
+"desc": "A celebration identity that combines SWVL's red palette with playful illustration and oversized lettering. Outdoor signage and staff shirts bring the same energetic visual language into the live gathering.",
+"images": [
+[
+"p54-0.jpg",
+930,
+1408
+],
+[
+"p54-1.jpg",
+831,
+740
+],
+[
+"p54-2.jpg",
+831,
+613
+]
+]
+}
+];
+/* Typography: 12 upload tiles shown only on the Projects page (no inner pages) */
+const TYPO_N = 12;
+const TYPO = { slug: "typography", cat: "typography", client: "Typography", title: "", country: "", images: Array.from({ length: TYPO_N }, () => [null, 1, 1]) };
+const findP = s => s === TYPO.slug ? TYPO : PROJECTS.find(x => x.slug === s);
+const catCount = id => id === "typography" ? TYPO_N : PROJECTS.filter(p => p.cat === id).length;
+
+/* ============================================================
+   RENDERING
+   ============================================================ */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cat = id => CATEGORIES.find(c => c.id === id);
+const pad = n => String(n).padStart(2, "0");
+const countries = [...new Set(PROJECTS.map(p => p.country))];
+
+/* ---------- Image slots ----------
+   Every image is a placeholder until an image is uploaded for it.
+   Uploads are stored as artifact assets; db doc "slots/<slug>--<n>" = {asset, w, h}. */
+const BLOB = "https://4a925281-f37d-4cd0-ba51-7c00c6a32d9a.frame.claudeusercontent.com/_blob/";
+const SLOTS = {};            // key -> {asset, w, h}
+let DB = null, ASSETS = null, CAN_UPLOAD = false;
+const slotKey = (p, k) => p.slug + "--" + k;
+const ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-9 9"/></svg>`;
+
+function slot(p, k, cls = "") {
+  const im = p.images[k];
+  return `<div class="slot ${cls}" data-slot="${slotKey(p, k)}" data-p="${p.slug}" data-k="${k}" style="--ar:${im[1]}/${im[2]}"></div>`;
+}
+
+function fillSlot(el) {
+  if (el.classList.contains("busy")) return;
+  const p = findP(el.dataset.p), k = +el.dataset.k, im = p.images[k], isType = p === TYPO;
+  const rec = SLOTS[el.dataset.slot], isCard = el.classList.contains("card-slot"), edit = CAN_UPLOAD && !isCard;
+  const sig = (rec ? rec.asset : "") + "|" + edit;
+  if (el.dataset.sig === sig) return;
+  el.dataset.sig = sig;
+  const name = isType ? "Typography " + pad(k + 1) : k === 0 ? "Main image" : "Image " + pad(k + 1);
+  let h;
+  if (rec) {
+    if (!isCard && rec.w && rec.h) el.style.setProperty("--ar", rec.w + "/" + rec.h);
+    h = `<img src="${BLOB}${rec.asset}" alt="${esc(isType ? "Typography " + (k + 1) : p.client + ", " + p.title + (k ? " — image " + (k + 1) : ""))}" loading="${k === 0 ? "eager" : "lazy"}" decoding="async">`;
+    if (edit) h += `<div class="slot-tools"><button class="tool" data-act="upload">Replace</button><button class="tool danger" data-act="remove">Remove</button></div>`;
+  } else {
+    el.style.setProperty("--ar", im[1] + "/" + im[2]);
+    h = `<div class="ph">${ICON}<span class="label">${isCard ? esc(p.client) : name}</span>
+      ${edit ? `<button class="btn solid" data-act="upload">Upload image <span class="arr">↑</span></button><span class="hint">JPG, PNG or WebP · up to 20 MB · ${isType ? "shown square" : "about " + (im[1] > im[2] * 1.4 ? "wide" : im[2] > im[1] * 1.1 ? "tall" : "4:3")}</span>` : ""}</div>`;
+    if (edit && im[0]) h += `<figure class="ref"><img src="images/${im[0]}" alt="" loading="lazy"><figcaption>From PDF</figcaption></figure>`;
+  }
+  el.innerHTML = h;
+  el.classList.toggle("filled", !!rec);
+}
+const hydrate = () => {
+  document.querySelectorAll(".slot").forEach(fillSlot);
+  const note = $("#editNote"); if (note) note.hidden = !CAN_UPLOAD;
+};
+
+function flash(el, text) {
+  el.querySelector(".slot-msg")?.remove();
+  const m = document.createElement("div"); m.className = "slot-msg"; m.textContent = text; el.appendChild(m);
+  setTimeout(() => m.remove(), 4500);
+}
+const UPLOAD_ERRORS = {
+  too_large: "This image is over 20 MB. Export a smaller file and try again.",
+  unsupported_type: "Use a JPG, PNG, WebP or GIF image.",
+  quota_or_state: "Storage for this page is full. Remove some images first.",
+  rate_limited: "Too many uploads at once. Wait a moment and try again.",
+  upstream_auth: "Your session expired. Reload the page and sign in again.",
+  not_granted: "You don't have permission to upload images here."
+};
+function dims(file) {
+  if (window.createImageBitmap) return createImageBitmap(file).then(b => { const d = { w: b.width, h: b.height }; b.close?.(); return d; });
+  return new Promise((ok, no) => { const i = new Image(); i.onload = () => ok({ w: i.naturalWidth, h: i.naturalHeight }); i.onerror = no; i.src = URL.createObjectURL(file); });
+}
+async function upload(el, file) {
+  if (!file) return;
+  if (!/^image\/(jpeg|png|webp|gif)$/.test(file.type)) return flash(el, UPLOAD_ERRORS.unsupported_type);
+  if (file.size > 20 * 1024 * 1024) return flash(el, UPLOAD_ERRORS.too_large);
+  const key = el.dataset.slot, old = SLOTS[key];
+  el.classList.add("busy"); el.dataset.status = "Uploading…";
+  try {
+    const d = await dims(file).catch(() => ({ w: 0, h: 0 }));
+    const res = await ASSETS.upload(file);
+    const rec = { asset: res.id, w: d.w, h: d.h, file: file.name.slice(0, 120), at: Date.now() };
+    await DB.doc("slots/" + key).set(rec);
+    SLOTS[key] = rec;
+    if (old && old.asset !== res.id) ASSETS.delete(old.asset).catch(() => {});
+  } catch (e) {
+    el.classList.remove("busy"); el.dataset.sig = ""; fillSlot(el);
+    return flash(el, UPLOAD_ERRORS[e && e.code] || "The upload didn't go through. Try again.");
+  }
+  el.classList.remove("busy"); el.dataset.sig = ""; fillSlot(el);
+}
+async function removeImage(el, btn) {
+  if (btn.dataset.armed !== "1") {      // two-step: first click arms, second removes
+    btn.dataset.armed = "1"; btn.textContent = "Click again to remove";
+    setTimeout(() => { if (btn.isConnected) { btn.dataset.armed = ""; btn.textContent = "Remove"; } }, 4000);
+    return;
+  }
+  const key = el.dataset.slot, old = SLOTS[key];
+  el.classList.add("busy"); el.dataset.status = "Removing…";
+  try {
+    await DB.doc("slots/" + key).delete();
+    delete SLOTS[key];
+    if (old) ASSETS.delete(old.asset).catch(() => {});
+  } catch (e) { flash(el, "Couldn't remove the image. Try again."); }
+  el.classList.remove("busy"); el.dataset.sig = ""; fillSlot(el);
+}
+
+document.addEventListener("click", e => {
+  const act = e.target.closest("[data-act]"), el = e.target.closest(".slot");
+  if (act && el && CAN_UPLOAD) {
+    e.preventDefault();
+    if (act.dataset.act === "remove") return removeImage(el, act);
+    const inp = document.createElement("input");
+    inp.type = "file"; inp.accept = "image/jpeg,image/png,image/webp,image/gif";
+    inp.onchange = () => upload(el, inp.files[0]);
+    inp.click();
+    return;
+  }
+  if (el && el.classList.contains("filled") && !el.classList.contains("card-slot") && e.target.tagName === "IMG") openLb(+el.dataset.k, findP(el.dataset.p));
+});
+
+/* Static site: images baked in */
+Object.assign(SLOTS, {"1dx-health-healthcare-brand-launch-campaign--0":{"asset":"95977e45f677659ec819e60bd143fe10","w":2500,"h":1169},"1dx-health-healthcare-brand-launch-campaign--1":{"asset":"0f58f0e75aba6295edb73f37cd4fc7e2","w":1920,"h":1080},"1dx-health-healthcare-brand-launch-campaign--2":{"asset":"35e49cbeb37e2e3f3fd287182a2dae6c","w":1920,"h":1080},"1dx-health-healthcare-brand-launch-campaign--3":{"asset":"4e819f40928cabb7eb1995f4013abca7","w":1920,"h":1080},"admo-lifestyle-lifestyle-brand-identity--0":{"asset":"6755e97acd0b2a5cb61da535dbcb2843","w":10417,"h":4871},"admo-lifestyle-lifestyle-brand-identity--1":{"asset":"4aeffc60448e584d2961575de389b079","w":1920,"h":1080},"admo-lifestyle-lifestyle-brand-identity--2":{"asset":"524e9fc7c9f8de72b105e7dd52069b1c","w":1920,"h":1080},"admo-lifestyle-lifestyle-brand-identity--3":{"asset":"507de47237d7f550dd12ae46c9e1ab1d","w":1852,"h":1080},"admo-lifestyle-lifestyle-brand-identity--4":{"asset":"a47c73fe8cd53cde69cd464bf5fa6fc6","w":1920,"h":1080},"al-bakkal-mobile-app-grocery-delivery-brand--0":{"asset":"86395e4b8b07605947addec52af846b6","w":10417,"h":4871},"al-bakkal-mobile-app-grocery-delivery-brand--1":{"asset":"7f9968e24af2f7e16e104982183e7e3a","w":1920,"h":1080},"al-bakkal-mobile-app-grocery-delivery-brand--2":{"asset":"50d1b585b07c6244999fdc1deb8ae0f3","w":1920,"h":1080},"al-bakkal-mobile-app-grocery-delivery-brand--3":{"asset":"f70b048f406e4151a31182101634b1f7","w":1920,"h":1080},"al-bakkal-mobile-app-grocery-delivery-brand--4":{"asset":"238f4d958f1d9e5225b6a7521d6fd007","w":1920,"h":1080},"al-maryah-community-bank-deposit-rewards-campaign--0":{"asset":"ba909fe3e8715467a2bfb74222842ea2","w":2500,"h":1169},"al-maryah-community-bank-deposit-rewards-campaign--1":{"asset":"26784ee2d03bb30f7ec526d2abcc4a9e","w":1920,"h":1081},"al-maryah-community-bank-deposit-rewards-campaign--2":{"asset":"1051bbf649b1760e7c3d1063e0a1ddad","w":1920,"h":1081},"al-maryah-community-bank-deposit-rewards-campaign--3":{"asset":"2f52235d12a422a1232702eee2a8fc32","w":1920,"h":1081},"burjeel-breast-center-breast-care-visual-identity--0":{"asset":"90db1b3020fef9122c4cd060b21cc9c2","w":10417,"h":4871},"burjeel-breast-center-breast-care-visual-identity--1":{"asset":"770300319396156fcf079bb7ea70a122","w":1920,"h":1080},"burjeel-breast-center-breast-care-visual-identity--2":{"asset":"2110c4648847cd1fa1167c980994fe45","w":1920,"h":1080},"burjeel-breast-center-breast-care-visual-identity--3":{"asset":"da62695e8db6cd97b1ef9bd3b1e411b4","w":1920,"h":1101},"burjeel-breast-center-center-of-excellence-recognition--0":{"asset":"f2c4b057a9b48397efce3a9947cfc6ad","w":2500,"h":1169},"burjeel-breast-center-center-of-excellence-recognition--1":{"asset":"c7fe609d62e809aebfe0b1cd9c1a8bbb","w":1920,"h":1080},"burjeel-breast-center-center-of-excellence-recognition--2":{"asset":"5fc33057252b5920658652c6cc46528d","w":1920,"h":1080},"burjeel-breast-center-center-of-excellence-recognition--3":{"asset":"9ffeeeb6cd45f2ea5b6987b0f203f647","w":1920,"h":1080},"burjeel-breast-center-pink-october-awareness-activation--0":{"asset":"4ee3ffe8b92eff88397bbc0bec6724b2","w":1920,"h":1080},"burjeel-breast-center-pink-october-awareness-activation--1":{"asset":"ce64abb3f18cf8ced7ab5562eae892a4","w":1920,"h":1080},"burjeel-breast-center-pink-october-awareness-activation--2":{"asset":"74d066e66b2a1a282f749ecb0bb68dc4","w":1920,"h":1080},"burjeel-breast-center-pink-october-awareness-activation--3":{"asset":"0443a54b824e928330d394fca8312bf4","w":1920,"h":1080},"burjeel-breast-center-pink-october-awareness-campaign--0":{"asset":"b94c7b5c6b41fbf244a471320f04c88f","w":1920,"h":898},"burjeel-breast-center-pink-october-awareness-campaign--1":{"asset":"7dbcba33e830b9b771697e20f302db8f","w":1920,"h":1080},"burjeel-breast-center-pink-october-awareness-campaign--2":{"asset":"5866ce5c1121005a1b6837f2e71a6742","w":1920,"h":1080},"burjeel-breast-center-pink-october-awareness-campaign--3":{"asset":"db25fc736a09a58e69e1cabd1487fba7","w":1920,"h":1080},"burjeel-cancer-institute-cancer-care-visual-identity--0":{"asset":"a2fac098a65d57154b21237ee2f6b5ef","w":10417,"h":4871},"burjeel-cancer-institute-cancer-care-visual-identity--1":{"asset":"9cca699d2bed8c90993992b6f8e3a49c","w":1080,"h":1080},"burjeel-cancer-institute-cancer-care-visual-identity--2":{"asset":"3cec2f5b4ee8f46112c8dfd2b314506c","w":1920,"h":1080},"burjeel-cancer-institute-cancer-care-visual-identity--3":{"asset":"8a81fc767acefb5af8156dc25496fa67","w":1919,"h":1080},"burjeel-cancer-institute-specialist-department-launch-campaign--0":{"asset":"958f667811e16bf97974d33855c9fb25","w":2500,"h":1169},"burjeel-cancer-institute-specialist-department-launch-campaign--1":{"asset":"3047413252c46801470e32480089d386","w":1920,"h":1080},"burjeel-cancer-institute-specialist-department-launch-campaign--2":{"asset":"3e34a015021298cc52f5b9970e555ba3","w":1920,"h":1080},"burjeel-cancer-institute-specialist-department-launch-campaign--3":{"asset":"67ebfdde0e6f25a514aea299a9a89115","w":1920,"h":1080},"burjeel-eye-institute-you-niverse-eye-care--0":{"asset":"a36641df9a97abb5608fe2fdcdfdcb0f","w":2500,"h":1169},"burjeel-eye-institute-you-niverse-eye-care--1":{"asset":"c6193984328d4f34b5169bae48d19787","w":1920,"h":1080},"burjeel-eye-institute-you-niverse-eye-care--2":{"asset":"4bd3f768d87b2fd50e11fb5cd2eca7e5","w":1920,"h":1080},"burjeel-eye-institute-you-niverse-eye-care--3":{"asset":"691e27bff55e5296d00fafc8411a904c","w":1920,"h":1080},"burjeel-holdings-burjeel-2-0-corporate-event--0":{"asset":"9ab99541606a69af2585402ae45d25bb","w":2500,"h":1169},"burjeel-holdings-burjeel-2-0-corporate-event--1":{"asset":"39b81452a4c6452ebf0fb53e2273cadc","w":1920,"h":1080},"burjeel-holdings-burjeel-2-0-corporate-event--2":{"asset":"81c837fdad6affea02a4367f8ff30881","w":1920,"h":1080},"burjeel-holdings-burjeel-2-0-corporate-event--3":{"asset":"65349a0b5ec19d758769f7c0b3d26b95","w":1920,"h":1080},"burjeel-holdings-burjeel-2-0-corporate-event--4":{"asset":"30771a4074fef1bfa3656f4c7b494211","w":2500,"h":1169},"burjeel-holdings-burjeel-2-0-corporate-event--5":{"asset":"9147080ad171a40c79c3c1491ddb92cd","w":1920,"h":1080},"burjeel-holdings-burjeel-2-0-corporate-event--6":{"asset":"42e154d2f86be561bfb9351e1dcee19c","w":1920,"h":1080},"burjeel-holdings-burjeel-2-0-corporate-event--7":{"asset":"cbd01a9c5485f05ea08ad2e32999836e","w":1920,"h":1080},"burjeel-hospital-hospital-identity-refresh--0":{"asset":"65f320d04c1ff1ba4e53d6a95c24e961","w":10417,"h":4871},"burjeel-hospital-hospital-identity-refresh--1":{"asset":"d7610be6a62f7940408639868b28e9b8","w":1920,"h":1080},"burjeel-hospital-hospital-identity-refresh--2":{"asset":"fa58ec5ad7c2750c7219377b123ceef3","w":1920,"h":1080},"burjeel-hospital-hospital-identity-refresh--3":{"asset":"a6c31b0c4b57ab24c35b92bb4d3e2c39","w":1920,"h":1080},"burjeel-medical-city-fibroid-awareness-campaign--0":{"asset":"ea966f472add160c4c0b5ea98fc9da60","w":2500,"h":1169},"burjeel-medical-city-fibroid-awareness-campaign--1":{"asset":"111e93fa754c6d526ba05e86ec4f3c9e","w":1920,"h":1080},"burjeel-medical-city-fibroid-awareness-campaign--2":{"asset":"480f6df7f7d8b4b09d9fdd8eed17a749","w":1920,"h":1080},"burjeel-medical-city-fibroid-awareness-campaign--3":{"asset":"38d3a2fef084e58d8f4ba452400bc7fd","w":1920,"h":1080},"burjeel-pharmacy-heroes-dont-clock-out-24--0":{"asset":"c77311a223442bb21d7e1d5ce577d5e7","w":1920,"h":1080},"burjeel-pharmacy-heroes-dont-clock-out-24--1":{"asset":"e7ebcabce3ddb098d3465e5dace51ee1","w":1920,"h":1080},"burjeel-pharmacy-heroes-dont-clock-out-24--2":{"asset":"536cbb623176fcea98c9415021c610d9","w":1920,"h":1080},"burjeel-pharmacy-heroes-dont-clock-out-24--3":{"asset":"ccd1dc6dfb0f4870ef81fb61b7186d85","w":1920,"h":1080},"burjeel-pharmacy-ouch-24-7-launch-campaign--0":{"asset":"63fbfe13258347a7566ef2a99170ed26","w":2500,"h":1169},"burjeel-pharmacy-ouch-24-7-launch-campaign--1":{"asset":"10d52d31fcbe51bb5f2a2a9dd284f81d","w":1920,"h":1080},"burjeel-pharmacy-ouch-24-7-launch-campaign--2":{"asset":"e1605e1714617d9fff9233e4734228c1","w":1920,"h":1080},"burjeel-pharmacy-ouch-24-7-launch-campaign--3":{"asset":"c546004b9dddb616873221f5a1c99878","w":1920,"h":1080},"burjeel-proud-internal-newsletter-identity--0":{"asset":"33c5fe85899c5c1cdf2f4f8fa760dfc0","w":10417,"h":4871},"burjeel-proud-internal-newsletter-identity--1":{"asset":"6e51c6b464d62d391cf8454a4a899f46","w":1920,"h":1080},"burjeel-proud-internal-newsletter-identity--2":{"asset":"25d54a9a1b75b498068c3f6229b67ac9","w":1920,"h":1080},"burjeel-proud-internal-newsletter-identity--3":{"asset":"dac8a5a04d0ec641bc9ca5a9d7c06e15","w":1920,"h":1072},"burjeel-proud-internal-newsletter-identity--4":{"asset":"f6a18a3ba73027bfff8b6cd0580eaf9d","w":1920,"h":1080},"carleton-college-college-brand-launch-campaign--0":{"asset":"ac41ccc8a7d1b3bd9018cab7a1735538","w":2500,"h":1169},"carleton-college-college-brand-launch-campaign--1":{"asset":"ddd7f582bf3697509b9a07c939149929","w":1920,"h":1080},"carleton-college-college-brand-launch-campaign--2":{"asset":"019a1cf25c3705c37059a7fe1e956624","w":1920,"h":1080},"carleton-college-college-brand-launch-campaign--3":{"asset":"13f7bd626e6b5af377907d34dfa27a4b","w":1920,"h":1080},"central-testing-lab-laboratory-brand-launch-campaign--0":{"asset":"831561852b1ac7704827b3bfa972b46e","w":2500,"h":1169},"central-testing-lab-laboratory-brand-launch-campaign--1":{"asset":"8b68aa7d0dd40bd11cd8e279364c915c","w":1920,"h":1080},"central-testing-lab-laboratory-brand-launch-campaign--2":{"asset":"02178cc1685a12022d08296ec771e1af","w":1920,"h":1080},"central-testing-lab-laboratory-brand-launch-campaign--3":{"asset":"1fdb056b3e95e1f57b3b11f164bf58bd","w":1920,"h":1080},"colettes-bakery-bakery-brand-identity-and-packaging--0":{"asset":"85b2430ceb236da171504c8449490089","w":10417,"h":4871},"colettes-bakery-bakery-brand-identity-and-packaging--1":{"asset":"06eda0c703a92dc544b9c62a975d7fa0","w":1920,"h":1080},"colettes-bakery-bakery-brand-identity-and-packaging--2":{"asset":"813844bef19c7a36ba981dca6c076647","w":1920,"h":1080},"colettes-bakery-bakery-brand-identity-and-packaging--3":{"asset":"7c004ac681158011c7789d821dea24ec","w":1920,"h":1080},"colettes-bakery-bakery-brand-identity-and-packaging--4":{"asset":"30a915be0d276ce64e9c028290a584c3","w":1920,"h":1080},"creator-summit-summit-event-identity-and-venue--0":{"asset":"95c75cc045e0c614f281cf5c2bfdc1cc","w":1920,"h":1080},"creator-summit-summit-event-identity-and-venue--1":{"asset":"71be46840f3d2326e2f8c1a1814553bc","w":1920,"h":1080},"creator-summit-summit-event-identity-and-venue--2":{"asset":"31745da1495c9d71b17e810aa0ed4318","w":1920,"h":1080},"creator-summit-summit-event-identity-and-venue--3":{"asset":"91a4783f99631e1d93e114a0109fda0a","w":1920,"h":1080},"design-house-interior-design-studio-identity--0":{"asset":"24edc019bf519446223c51286f80a113","w":10417,"h":4871},"design-house-interior-design-studio-identity--1":{"asset":"dedb768e4c58c140f3cbf1103097ca06","w":1920,"h":1080},"design-house-interior-design-studio-identity--2":{"asset":"61ca22834b28ab0811f93b54a4051319","w":1920,"h":1080},"design-house-interior-design-studio-identity--3":{"asset":"c18458ee50850fcc5406282aa6b7bd43","w":1920,"h":1080},"design-house-interior-design-studio-identity--4":{"asset":"c4422cd8e1201a82e6fca17953bbf9a4","w":1920,"h":1080},"dzrt-corporate-brand-launch-campaign--0":{"asset":"dd4ff614fec8d5b515bb619753554b5a","w":2500,"h":1169},"dzrt-corporate-brand-launch-campaign--1":{"asset":"4a0821d18138114136db87e6f9201d5d","w":1920,"h":1080},"dzrt-corporate-brand-launch-campaign--2":{"asset":"1430713e265804cbb5bbdf15ff75f53c","w":1920,"h":1080},"dzrt-corporate-brand-launch-campaign--3":{"asset":"82d34d13bacd42a99cf456d60b2039da","w":1920,"h":1080},"falafel-mtbag-restaurant-brand-identity-and-packaging--0":{"asset":"bded31e7a5ea6a464f0a108c9b48e2cc","w":10417,"h":4871},"falafel-mtbag-restaurant-brand-identity-and-packaging--1":{"asset":"f465c6d31e20f300bfcba9679a061e73","w":1920,"h":1080},"falafel-mtbag-restaurant-brand-identity-and-packaging--2":{"asset":"3665e1e46e927f40069cf8151bdf00c9","w":1920,"h":1080},"falafel-mtbag-restaurant-brand-identity-and-packaging--3":{"asset":"29d604c30d4867947da06155eda9d974","w":1920,"h":1080},"falafel-mtbag-restaurant-brand-identity-and-packaging--4":{"asset":"7a891efb0df46ab5c629dc9c1b53156e","w":1920,"h":1080},"family-consulting-center-family-relationships-awareness-campaign--0":{"asset":"73e549fcd844aec4983bb63139bf3fc1","w":2500,"h":1169},"family-consulting-center-family-relationships-awareness-campaign--1":{"asset":"78909d4c934f1988759a97f13468d49d","w":1920,"h":1080},"family-consulting-center-family-relationships-awareness-campaign--2":{"asset":"7b03d4cd3d52c05264a0cf498d3283c9","w":1920,"h":1080},"family-consulting-center-family-relationships-awareness-campaign--3":{"asset":"d165449295eb7067f7c112488fab6271","w":1920,"h":1080},"forza-brand-identity-and-packaging--0":{"asset":"f5cc23e90c5e11be89e45590ba87af3b","w":10417,"h":4871},"forza-brand-identity-and-packaging--1":{"asset":"20ea0ffbb930ca67868404b3655db244","w":1920,"h":1080},"forza-brand-identity-and-packaging--2":{"asset":"358798c945a17b96e36728f0f27d5d2d","w":1920,"h":1080},"forza-brand-identity-and-packaging--3":{"asset":"45dcff5525eba5a89ed620b1b23e14c1","w":1920,"h":1080},"habba-creations-creative-brand-identity-and-applications--0":{"asset":"24af8820ca156eec89faee534fa2f0ea","w":10417,"h":4871},"habba-creations-creative-brand-identity-and-applications--1":{"asset":"8c3b515833e2fec436ec0b2e7d4da327","w":1920,"h":1080},"habba-creations-creative-brand-identity-and-applications--2":{"asset":"0164c3e1606cb62c22fed9445fa3fbd3","w":1920,"h":1080},"habba-creations-creative-brand-identity-and-applications--3":{"asset":"fe14d4ddbfc7300a9588f2ca3adfef1e","w":1920,"h":1080},"habba-creations-creative-brand-identity-and-applications--4":{"asset":"3ffbe67e44fdc85c3020f239c4b3fdd2","w":1920,"h":1080},"makkiyoon-real-estate-quality-of-life-campaign--0":{"asset":"71f892f4c3867a16315685585ff9a57a","w":2500,"h":1169},"makkiyoon-real-estate-quality-of-life-campaign--1":{"asset":"77b75269a84dfd2485d11c35f0c82287","w":1920,"h":1080},"makkiyoon-real-estate-quality-of-life-campaign--2":{"asset":"9ae197f7184380a500cdd1c5af668ee8","w":1920,"h":1080},"makkiyoon-real-estate-quality-of-life-campaign--3":{"asset":"14dff5381f1d1b94e8a4d0ea82bec761","w":1920,"h":1080},"mamaes-pizza-pizza-brand-identity-and-packaging--0":{"asset":"0364d15834509f39d4ae4a6a94d9a564","w":10417,"h":4871},"mamaes-pizza-pizza-brand-identity-and-packaging--1":{"asset":"c003cbd4242bc974d550e536f9704929","w":1920,"h":1080},"mamaes-pizza-pizza-brand-identity-and-packaging--2":{"asset":"cc9ed401097337101567a91d409ce8bf","w":1920,"h":1080},"mamaes-pizza-pizza-brand-identity-and-packaging--3":{"asset":"2894329ef27d6e3b36066056cd425fc9","w":1920,"h":1080},"mamaes-pizza-pizza-brand-identity-and-packaging--4":{"asset":"aa4a5478ed20e677da65a7cafdc8ff68","w":1920,"h":1080},"marzoug-retail-app-brand-identity--0":{"asset":"372b7ca1234b16dab619e8285b4c2d87","w":10417,"h":4871},"marzoug-retail-app-brand-identity--1":{"asset":"250ee93bed34fb4a3a1e6621aecd23e2","w":1920,"h":1080},"marzoug-retail-app-brand-identity--2":{"asset":"0a768d3d869bd4b64f7f45d91c7a16ea","w":1920,"h":1080},"marzoug-retail-app-brand-identity--4":{"asset":"8824d057d7687e77ee744dedeb46dc7c","w":1920,"h":1080},"molti-cakezz-dessert-brand-identity-and-packaging--0":{"asset":"b12b05c7af653635e49610d3de1dc2b2","w":10417,"h":4871},"molti-cakezz-dessert-brand-identity-and-packaging--1":{"asset":"eef7a6f07d83377bfb2696beb6cb77f1","w":1920,"h":1080},"molti-cakezz-dessert-brand-identity-and-packaging--2":{"asset":"8f6409c40cb601c0f042e86e29ef36ef","w":1920,"h":1080},"molti-cakezz-dessert-brand-identity-and-packaging--3":{"asset":"d623d69af48e5fb263b37027129189c2","w":1920,"h":1080},"molti-cakezz-dessert-brand-identity-and-packaging--4":{"asset":"e8fee93a882e17a24594c7c1d1bc50b9","w":1920,"h":1080},"monat-bladna-food-retail-identity-and-packaging--0":{"asset":"a3c920fa63f5db14742d22a3cad28236","w":10417,"h":4871},"monat-bladna-food-retail-identity-and-packaging--1":{"asset":"337b52481e22954209cd8b957e5a604c","w":1920,"h":1080},"monat-bladna-food-retail-identity-and-packaging--2":{"asset":"223236f4120a7732a41d34ea97d1b375","w":1920,"h":1080},"monat-bladna-food-retail-identity-and-packaging--3":{"asset":"68968040fa788d82eaa53b0025ce8d1e","w":1920,"h":1080},"monat-bladna-food-retail-identity-and-packaging--4":{"asset":"d099d3e37c4f2ba66b345f485f1d22a5","w":1920,"h":1080},"mtbag-gourmet-restaurant-brand-identity-and-packaging--0":{"asset":"218aa8c1646580b1f043713dee17afde","w":10417,"h":4871},"mtbag-gourmet-restaurant-brand-identity-and-packaging--1":{"asset":"50873aa02e95b10fcd1bae8c397afb0f","w":1920,"h":1080},"mtbag-gourmet-restaurant-brand-identity-and-packaging--2":{"asset":"49412c62ddb75ada0ef13d25b42b004f","w":1920,"h":1080},"mtbag-gourmet-restaurant-brand-identity-and-packaging--3":{"asset":"354ac7113a69410d3c5f8456ca43a879","w":1920,"h":1080},"mtbag-gourmet-restaurant-brand-identity-and-packaging--4":{"asset":"d1337f32819bf7910217e4a106da5626","w":1920,"h":1080},"nmc-al-nahda-community-run-30-30--0":{"asset":"4e687a808c44c6c8c1d3bd1d9ad2cc67","w":10417,"h":4871},"nmc-al-nahda-community-run-30-30--1":{"asset":"076ca503e45f3b1cca62294c7785c465","w":1920,"h":1080},"nmc-al-nahda-community-run-30-30--2":{"asset":"48a74df15ae64aad2826c8aae5529282","w":1920,"h":1076},"nmc-al-nahda-community-run-30-30--3":{"asset":"28817b577ffacb4f5ff97579c7a822a3","w":1920,"h":1074},"nmc-al-nahda-everyday-strain-awareness-campaign--0":{"asset":"9955552f7f6f6abbffd0689bba7843a3","w":2500,"h":1169},"nmc-al-nahda-everyday-strain-awareness-campaign--1":{"asset":"bedb9562f165b9030914f7b067dd6bf4","w":1920,"h":1080},"nmc-al-nahda-everyday-strain-awareness-campaign--2":{"asset":"5cb186d6b068da9fc00f5867a1cbcba8","w":1920,"h":1080},"nmc-al-nahda-everyday-strain-awareness-campaign--3":{"asset":"b9ebf06d617522bedc609bf83eaebf52","w":1920,"h":1080},"nmc-al-nahda-orthopedic-care-campaign--0":{"asset":"0a4f158f142e080903e68b8777b08ebf","w":2500,"h":1169},"nmc-al-nahda-orthopedic-care-campaign--1":{"asset":"9db7782988186fba83e92f7dbcb9a228","w":1920,"h":1080},"nmc-al-nahda-orthopedic-care-campaign--2":{"asset":"bc6cc02628374b4fb03f93d4c544e6d1","w":1920,"h":1080},"nmc-al-nahda-orthopedic-care-campaign--3":{"asset":"bef6e6a5a0f1c28533acaafec06f38aa","w":1920,"h":1080},"nmc-al-nahda-pre-ramadan-health-campaign--0":{"asset":"08a32c2ddff2c119cd1263b39d9a37b5","w":2500,"h":1169},"nmc-al-nahda-pre-ramadan-health-campaign--1":{"asset":"e8ddfcb0433aa2a9f955f2eca58b0b9e","w":1920,"h":1080},"nmc-al-nahda-pre-ramadan-health-campaign--2":{"asset":"9d698101d9efb5db2d25fc09542802ee","w":1920,"h":1080},"nmc-al-nahda-pre-ramadan-health-campaign--3":{"asset":"5746e8640ccbd90c2c5b703abb0250c4","w":1920,"h":1080},"nmc-al-nahda-ramadan-healthcare-campaign--0":{"asset":"f1dc850f921972b3b96d1eb69da8f60e","w":2500,"h":1169},"nmc-al-nahda-ramadan-healthcare-campaign--1":{"asset":"4866bb7f036b50a43d64646093906940","w":1920,"h":1080},"nmc-al-nahda-ramadan-healthcare-campaign--2":{"asset":"b91b17167207e0ad9c650056238a1804","w":1920,"h":1080},"nmc-al-nahda-ramadan-healthcare-campaign--3":{"asset":"c5d9470249d29296d7fff55102ccaeed","w":1920,"h":1080},"okx-trading-risk-awareness-campaign--0":{"asset":"e313fba80ca00d3c67011f8d8d17f718","w":1920,"h":1080},"okx-trading-risk-awareness-campaign--1":{"asset":"1f5fdc35288a0f09c54c0fafeca4303a","w":1920,"h":1080},"okx-trading-risk-awareness-campaign--2":{"asset":"996655677a5a237ca2d973bd257f8c47","w":1920,"h":1080},"okx-trading-risk-awareness-campaign--3":{"asset":"27fd18dd9ea3e70123c6ad04ca75ef1f","w":1920,"h":1080},"organ-ature-natural-cosmetics-brand-identity--0":{"asset":"701e85af338a0e657e172abb2147e2e4","w":10417,"h":4871},"organ-ature-natural-cosmetics-brand-identity--1":{"asset":"e727af2b41f43cf5e835f7332b3dc5ff","w":1920,"h":1080},"organ-ature-natural-cosmetics-brand-identity--2":{"asset":"37612178a93c010ffafb85e28a785f71","w":1920,"h":1080},"organ-ature-natural-cosmetics-brand-identity--3":{"asset":"c71790c33e701e92b13633dde796f794","w":1920,"h":1080},"organ-ature-natural-cosmetics-brand-identity--4":{"asset":"438b70c56c627ce22c4f0f8c2af9442b","w":1920,"h":1075},"sea-la-vie-brand-identity-and-launch--0":{"asset":"6eb3f934e462b1f8b87d5337868ee9f3","w":10417,"h":4871},"sea-la-vie-brand-identity-and-launch--1":{"asset":"b21090450f5225578d5bd04f8b0e456b","w":1920,"h":1080},"sea-la-vie-brand-identity-and-launch--2":{"asset":"727db0ed4f7c5f9e1abd68ff36c8dbf7","w":1920,"h":1080},"sea-la-vie-brand-identity-and-launch--3":{"asset":"a9842c91b3e2b8c37c042e0cbfa5b59b","w":1920,"h":1080},"slice-soul-pizza-brand-identity-and-packaging--0":{"asset":"30690c0c3dce1ad11ca82e0f8dc8f8ae","w":10417,"h":4871},"slice-soul-pizza-brand-identity-and-packaging--1":{"asset":"3fa5ef7af8ca591d0ce05eeedb18cbee","w":1920,"h":1080},"slice-soul-pizza-brand-identity-and-packaging--2":{"asset":"b86ce8e96f80d71e67d4bbd31113d346","w":1920,"h":1080},"slice-soul-pizza-brand-identity-and-packaging--3":{"asset":"e53f731eff60ca0f3cba82f0f0360d47","w":1920,"h":1080},"slice-soul-pizza-brand-identity-and-packaging--4":{"asset":"e463dfda71adcc7203e0ec58b827643c","w":1920,"h":1080},"sprint-academy-athletics-academy-brand-identity--0":{"asset":"d532c08d5db72f81753acbb0f68de88d","w":10417,"h":4871},"sprint-academy-athletics-academy-brand-identity--1":{"asset":"bb220180f5f29f84ce22df8ec3afe20a","w":1920,"h":1080},"sprint-academy-athletics-academy-brand-identity--2":{"asset":"084f7be233acf1416ad1295eeaf8fdb5","w":1920,"h":1080},"sprint-academy-athletics-academy-brand-identity--3":{"asset":"ec4a74fde8f6421c73422cf4bcbbe66d","w":1920,"h":1080},"sprint-academy-athletics-academy-brand-identity--4":{"asset":"3c138b169e836a2181ea83d63ac2945f","w":1920,"h":1080},"swvl-celebration-event-branding--0":{"asset":"a4e94b4220d0d16afd782d4775810821","w":2902,"h":3824},"swvl-celebration-event-branding--1":{"asset":"6f88b2698d147384be3e4f4881e12cde","w":1920,"h":1080},"swvl-celebration-event-branding--2":{"asset":"2bb4e710a7d34c690da063cfde60f5ce","w":1920,"h":1080},"tadweer-group-waste-awareness-campaign--0":{"asset":"363d67514eb8b3c3a613e3555263918e","w":2500,"h":1169},"tadweer-group-waste-awareness-campaign--1":{"asset":"1ee28cec38136b75ffc7a2e5180d42c8","w":1920,"h":1080},"tadweer-group-waste-awareness-campaign--2":{"asset":"28b6efe768f2e45870fc66be53fb731d","w":1920,"h":1080},"tadweer-group-waste-awareness-campaign--3":{"asset":"8be8053e732b8d25587151a64a12cb49","w":1920,"h":1080},"tamsheya-platform-brand-identity-and-environmental-applications--0":{"asset":"28ec82e6123e66a192e2cba37401f7e6","w":10417,"h":4871},"tamsheya-platform-brand-identity-and-environmental-applications--1":{"asset":"e883cb03eca50c67fac34922ce05bedc","w":1920,"h":1080},"tamsheya-platform-brand-identity-and-environmental-applications--2":{"asset":"03d406e35ede13791ac90bf887fe166b","w":1920,"h":1080},"tamsheya-platform-brand-identity-and-environmental-applications--3":{"asset":"f702129f3a026b3bb1da662d6779acab","w":1920,"h":1080},"tamsheya-platform-brand-identity-and-environmental-applications--4":{"asset":"6bf0c06aaf5810378267c041e9018c04","w":1920,"h":1080},"tiger-chips-snack-brand-campaign--0":{"asset":"c905f62d42f60b9e29ced0fabcf6bec1","w":1920,"h":1080},"tiger-chips-snack-brand-campaign--1":{"asset":"ba9de4eb96570c87c818340810bf163b","w":1920,"h":1080},"tiger-chips-snack-brand-campaign--2":{"asset":"a78b8eecfca7023d314482d66cff8268","w":1920,"h":1080},"tiger-chips-snack-brand-campaign--3":{"asset":"c04fcfc6e149f0d5029e821476b060e9","w":1920,"h":1080},"toffee-coffee-coffee-brand-identity--0":{"asset":"0a698425447f501c813070270b516904","w":10417,"h":4871},"toffee-coffee-coffee-brand-identity--1":{"asset":"49420c60848c78b3f3fe06f0d4072d06","w":1920,"h":1080},"toffee-coffee-coffee-brand-identity--2":{"asset":"5bd221a4fb5583ad2db0361844c4212e","w":1920,"h":1080},"toffee-coffee-coffee-brand-identity--3":{"asset":"051aa1f79803240b94f74d5425231dfe","w":1920,"h":1080},"typography--0":{"asset":"a63c1566e2140e8cc408442fdb478baf","w":8000,"h":4500},"typography--1":{"asset":"409c867d96a6104fe5b4b4461b2e6fad","w":8000,"h":4500},"typography--10":{"asset":"2d9368e826d4a569e24489e382c39d1c","w":8000,"h":4500},"typography--11":{"asset":"7f4f928671446cffcfc7da464deed985","w":8000,"h":4500},"typography--2":{"asset":"058cef2324b5fe6c6e4df4f0d9660c80","w":8000,"h":4500},"typography--3":{"asset":"58e56a931308fc71ab9e2fbfa94ca9c0","w":8000,"h":4500},"typography--4":{"asset":"3554ef564825725bb65d26e4dfd2533e","w":8000,"h":4500},"typography--5":{"asset":"dfb9a56a095ae0394fee4854c40f8751","w":8000,"h":4500},"typography--6":{"asset":"4b6747e9c76ca32be94fa0683fbc9d61","w":8000,"h":4500},"typography--7":{"asset":"88d592cb6e0759ef31f0b8966775c301","w":8000,"h":4500},"typography--8":{"asset":"3909fe2f48713b8c3774f300204a7746","w":8000,"h":4500},"typography--9":{"asset":"ec81a8dcb5e7d019fdae3ec2e880e121","w":8000,"h":4500},"vacost-electronics-wholesale-brand-identity--0":{"asset":"9d79f5ea3fa5a19a7fb952d1dd2a143b","w":10417,"h":4871},"vacost-electronics-wholesale-brand-identity--1":{"asset":"870bc1ed58a0c56bc32757c49e174882","w":1920,"h":1080},"vacost-electronics-wholesale-brand-identity--2":{"asset":"5ceb1e8d396ffc94fc3f57e598e8da25","w":1920,"h":1080},"vacost-electronics-wholesale-brand-identity--3":{"asset":"36f2aaf1719895d8bc5386b2d718914a","w":1920,"h":1080},"wamda-brand-identity-and-community-applications--0":{"asset":"7502733311556119d7f4c4417e30bf7d","w":10417,"h":4871},"wamda-brand-identity-and-community-applications--1":{"asset":"f5d87a9c0f2b4788b8e2b4b84c03c9f5","w":1920,"h":1080},"wamda-brand-identity-and-community-applications--2":{"asset":"f57ad6d046d5bed5ea60af2feb4fd0fa","w":1920,"h":1080},"wamda-brand-identity-and-community-applications--3":{"asset":"df86663c0e6ba13add9fcba042c83243","w":1920,"h":1080},"wamda-brand-identity-and-community-applications--4":{"asset":"4931f6440bb57875ab7b1a08c1cec0b3","w":1920,"h":1080}});
+hydrate();
+
+function card(p) {
+  return `<a class="card" href="#${p.slug}">
+    ${slot(p, 0, "card-slot")}
+    <div class="meta"><div class="top"><span class="h3">${esc(p.client)}</span><span class="ctry">${esc(p.country.replace("United Arab Emirates", "UAE"))}</span></div>
+    <span class="sub">${esc(p.title)}</span></div></a>`;
+}
+
+function viewHome() {
+  const feat = FEATURED.map(s => PROJECTS.find(p => p.slug === s)).filter(Boolean);
+  const count = catCount;
+  return `
+  <div class="wrap">
+    <section class="hero">
+      <span class="label rise">${esc(SITE.label)}</span>
+      <h1 class="display rise"><span style="display:block">${esc(SITE.greeting)}</span>${esc(SITE.name)}</h1>
+      <p class="lead rise">${esc(SITE.intro)}</p>
+      <div class="btns rise">
+        <a class="btn solid" href="#projects">See the work <span class="arr">↗</span></a>
+        <a class="btn" href="#contact">Get in touch <span class="arr">↗</span></a>
+      </div>
+    </section>
+    <div class="stats">
+      <div><b>+${PROJECTS.length}</b><span class="label">Projects</span></div>
+      <div><b>+${count("campaigns")}</b><span class="label">Campaigns</span></div>
+      <div><b>+${count("branding")}</b><span class="label">Brand identities</span></div>
+      <div><b>+${count("events")}</b><span class="label">Events</span></div>
+      <div><b>+${countries.length}</b><span class="label">Countries</span></div>
+    </div>
+
+    <section class="block">
+      <div class="sec-head"><div><span class="label">(01) About me</span><h2 class="h2">${esc(SITE.role)}</h2>
+        <p class="body" style="font-size:19px;margin-top:6px;max-width:60ch">${esc(SITE.about)}</p></div></div>
+      <div class="rows">
+        ${SITE.details.map(([k, v]) => `<div class="row"><span class="label">${esc(k)}</span><span class="v">${v}</span></div>`).join("")}
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><div><span class="label">(02) What I do</span><h2 class="h2">Areas of work</h2></div></div>
+      <div class="rows">
+        ${CATEGORIES.map(c => { const n = count(c.id); return `<a class="row" href="#projects-${c.id}" style="align-items:baseline">
+          <span class="h3" style="font-size:clamp(22px,2.4vw,30px)">${esc(c.name)}</span>
+          <span class="v" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><span style="color:var(--muted)">${esc(c.blurb)}</span>
+          <span class="label" style="white-space:nowrap">${c.id === "typography" ? n + " pieces ↗" : n + " projects ↗"}</span></span></a>`; }).join("")}
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="sec-head"><div><span class="label">(03) Selected work</span><h2 class="h2">Recent projects</h2></div>
+        <a class="btn" href="#projects">All ${PROJECTS.length} projects <span class="arr">↗</span></a></div>
+      <div class="grid two">${feat.map(card).join("")}</div>
+    </section>
+  </div>`;
+}
+
+function viewProjects(filter) {
+  const chips = [{ id: "all", name: "All", n: PROJECTS.length }]
+    .concat(CATEGORIES.map(c => ({ id: c.id, name: c.name, n: catCount(c.id) })));
+  const cats = filter === "all" ? CATEGORIES : CATEGORIES.filter(c => c.id === filter);
+  return `
+  <div class="wrap">
+    <section class="hero" style="gap:20px">
+      <span class="label rise">Projects — ${PROJECTS.length} in ${countries.length} countries</span>
+      <h1 class="display rise">Work</h1>
+      <p class="lead rise">Campaigns, brand identities, events and typography.</p>
+    </section>
+    <div class="filters" role="group" aria-label="Filter projects">
+      ${chips.map(c => `<button class="chip" data-filter="${c.id}" aria-pressed="${c.id === filter}">${esc(c.name)} <span class="c">${pad(c.n)}</span></button>`).join("")}
+    </div>
+    ${cats.map(c => {
+      const list = PROJECTS.filter(p => p.cat === c.id);
+      return `<section class="group">
+        <div class="group-head">
+          <div><span class="label">(${pad(CATEGORIES.indexOf(c) + 1)}) ${esc(c.type)}</span><h2 class="h2" style="font-size:clamp(32px,4vw,52px)">${esc(c.name)}</h2></div>
+          <p>${esc(c.blurb)}</p>
+        </div>
+        ${c.id === "typography" ? `<div class="grid type-grid">${TYPO.images.map((_, k) => slot(TYPO, k, "type")).join("")}</div>`
+          : `<div class="grid">${list.map(card).join("")}</div>`}
+      </section>`;
+    }).join("")}
+  </div>`;
+}
+
+function viewProject(p) {
+  const c = cat(p.cat), list = PROJECTS.filter(x => x.cat === p.cat), at = list.indexOf(p);
+  const prev = list[(at - 1 + list.length) % list.length], next = list[(at + 1) % list.length];
+  return `
+  <div class="wrap">
+    <a class="back" href="#projects-${p.cat}">← All ${esc(c.name.toLowerCase())}</a>
+    <section class="detail-head">
+      <div class="titles">
+        <span class="label rise">${esc(c.name)} · ${pad(at + 1)} / ${pad(list.length)}</span>
+        <h1 class="display rise">${esc(p.client)}</h1>
+        <p class="lead rise">${esc(p.title)}</p>
+      </div>
+      <div class="facts rise">
+        <div><span class="label">Client</span><span>${esc(p.client)}</span></div>
+        <div><span class="label">${p.cat === "campaigns" ? "Media" : "Discipline"}</span><span>${esc(p.medium || c.type)}</span></div>
+        <div><span class="label">Country</span><span>${esc(p.country)}</span></div>
+      </div>
+    </section>
+    <p class="edit-note" id="editNote" hidden>${ICON.replace("<svg", '<svg width="18" height="18" style="stroke:currentColor;fill:none;flex:none"')}
+      <span><b>Only you see the upload buttons.</b> Visitors see the images you upload, or empty placeholders until you do.</span></p>
+    ${slot(p, 0, "hero-slot")}
+    <div class="story">
+      <span class="label">About the project</span>
+      <div>${p.desc.split("\n\n").map(t => `<p>${esc(t)}</p>`).join("")}</div>
+    </div>
+    <div class="stack">${p.images.slice(1).map((_, i) => slot(p, i + 1)).join("")}</div>
+    <nav class="pager" aria-label="More ${esc(c.name.toLowerCase())}">
+      <a href="#${prev.slug}"><span class="label">← Previous</span><span class="h3">${esc(prev.client)}</span></a>
+      <a href="#${next.slug}"><span class="label">Next →</span><span class="h3">${esc(next.client)}</span></a>
+    </nav>
+  </div>`;
+}
+
+function viewContact() {
+  const needs = ["Campaign", "Brand identity", "Packaging", "Event", "Typography", "Not sure yet"];
+  const opt = (name, list) => list.map((t, i) => `<input type="radio" name="${name}" id="${name}-${i}" value="${esc(t)}"><label for="${name}-${i}">${esc(t)}</label>`).join("");
+  const val = (v, what) => v ? esc(v) : `<span class="todo">${what} to be added</span>`;
+  return `
+  <div class="wrap">
+    <section class="hero" style="gap:20px">
+      <span class="label rise">Contact</span>
+      <h1 class="display rise">${esc(SITE.contactTitle)}</h1>
+      <p class="lead rise">Tell me about your campaign, brand or event.</p>
+    </section>
+    <div class="contact-grid">
+      <div class="rows">
+        <div class="row"><span class="label">Email</span><span class="v">${SITE.email ? `<a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a>` : val("", "Email")}${SITE.email ? `<button class="copy" data-copy="${esc(SITE.email)}">Copy</button>` : ""}</span></div>
+        <div class="row"><span class="label">Phone</span><span class="v">${SITE.phone ? `<a href="tel:${SITE.phone.replace(/\s/g, "")}">${esc(SITE.phone)}</a>` : val("", "Phone")}</span></div>
+        <div class="row"><span class="label">Social</span><span class="v" style="display:flex;gap:18px;flex-wrap:wrap">${SITE.socials.length ? SITE.socials.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener">${n} ↗</a>`).join("") : val("", "Links")}</span></div>
+      </div>
+      <form class="brief" id="brief" novalidate>
+        <div class="field-row">
+          <div class="field"><label class="label" for="f-name">Your name</label><input id="f-name" autocomplete="name"></div>
+          <div class="field"><label class="label" for="f-email">Email</label><input id="f-email" type="email" autocomplete="email"></div>
+        </div>
+        <div class="field"><label class="label" for="f-company">Company</label><input id="f-company" autocomplete="organization"></div>
+        <div class="field"><span class="label">What do you need?</span><div class="opts">${opt("need", needs)}</div></div>
+        <div class="field"><label class="label" for="f-msg">Tell me about the project</label><textarea id="f-msg"></textarea></div>
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+          <button class="btn solid" type="submit">Send message <span class="arr">↗</span></button>
+          <p class="form-note" id="formNote" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>`;
+}
+
+/* Router: #home  #projects  #projects-branding  #contact  #<project-slug> */
+let current = null;
+function render() {
+  const h = (location.hash || "#home").slice(1);
+  let html, nav = "home";
+  current = PROJECTS.find(p => p.slug === h) || null;
+  if (current) { html = viewProject(current); nav = "projects"; }
+  else if (h === "projects" || h.startsWith("projects-")) {
+    const f = h.slice(9); html = viewProjects(CATEGORIES.some(c => c.id === f) ? f : "all"); nav = "projects";
+  }
+  else if (h === "contact") { html = viewContact(); nav = "contact"; }
+  else html = viewHome();
+  $("#app").innerHTML = `<div class="view">${html}</div>`;
+  document.querySelectorAll("[data-nav]").forEach(a => a.dataset.nav === nav ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  closeMenu(); closeLb();
+  window.scrollTo({ top: 0, behavior: "instant" });
+  bind();
+}
+
+function bind() {
+  document.querySelectorAll("[data-filter]").forEach(b => b.addEventListener("click", () => {
+    const f = b.dataset.filter; location.hash = f === "all" ? "projects" : "projects-" + f;
+  }));
+  hydrate();
+  document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => {
+    navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy", 1600); }).catch(() => {});
+  }));
+  const form = $("#brief");
+  if (form) form.addEventListener("submit", e => {
+    e.preventDefault();
+    const note = $("#formNote"), name = $("#f-name"), email = $("#f-email");
+    if (!name.value.trim()) { note.textContent = "Add your name so I know who to reply to."; name.focus(); return; }
+    if (!/^\S+@\S+\.\S+$/.test(email.value)) { note.textContent = "Add an email address I can reply to."; email.focus(); return; }
+    const need = (form.querySelector('input[name="need"]:checked') || {}).value || "";
+    const company = $("#f-company").value.trim(), msg = $("#f-msg").value.trim();
+    const body = `Name: ${name.value.trim()}\nEmail: ${email.value.trim()}` + (company ? `\nCompany: ${company}` : "") + (need ? `\nNeed: ${need}` : "") + (msg ? `\n\n${msg}` : "");
+    location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("Project enquiry from " + name.value.trim())}&body=${encodeURIComponent(body)}`;
+    note.textContent = "Opening your email app to send this. Or write to " + SITE.email + " directly.";
+  });
+}
+
+/* Lightbox */
+const lb = $("#lightbox"); let lbList = [], lbIndex = 0, lbP = null;   // lbList: indexes of this project's uploaded images
+function showLb() {
+  const k = lbList[lbIndex], rec = SLOTS[slotKey(lbP, k)];
+  if (!rec) return closeLb();
+  $("#lbImg").src = BLOB + rec.asset; $("#lbImg").alt = lbP.client + " image " + (k + 1);
+  $("#lbCount").textContent = `${lbIndex + 1} / ${lbList.length}`;
+  $("#lbPrev").hidden = $("#lbNext").hidden = lbList.length < 2;
+}
+function openLb(k, p) {
+  lbP = p || current; if (!lbP) return;
+  lbList = lbP.images.map((_, i) => i).filter(i => SLOTS[slotKey(lbP, i)]);
+  lbIndex = Math.max(0, lbList.indexOf(k)); if (!lbList.length) return;
+  showLb(); lb.hidden = false; document.body.style.overflow = "hidden"; $("#lbClose").focus();
+}
+function closeLb() { lb.hidden = true; document.body.style.overflow = ""; }
+const step = d => { lbIndex = (lbIndex + d + lbList.length) % lbList.length; showLb(); };
+$("#lbClose").addEventListener("click", closeLb);
+$("#lbPrev").addEventListener("click", () => step(-1));
+$("#lbNext").addEventListener("click", () => step(1));
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+document.addEventListener("keydown", e => {
+  if (lb.hidden) return;
+  if (e.key === "Escape") closeLb(); if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1);
+});
+
+/* Theme: light by default; the header button switches to dark and remembers it in this browser */
+const themeBtn = $("#themeBtn");
+function setTheme(mode, save) {
+  const dark = mode === "dark";
+  if (dark) document.documentElement.dataset.theme = "dark"; else delete document.documentElement.dataset.theme;
+  themeBtn.setAttribute("aria-pressed", String(dark));
+  themeBtn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  themeBtn.querySelector(".t").textContent = dark ? "Light" : "Dark";
+  if (save) { try { localStorage.setItem("theme", mode); } catch (e) {} }
+}
+let savedTheme = null; try { savedTheme = localStorage.getItem("theme"); } catch (e) {}
+setTheme(savedTheme === "dark" ? "dark" : "light", false);
+themeBtn.addEventListener("click", () => setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true));
+
+/* Menu + header */
+const menu = $("#mobileNav"), openBtn = $("#menuOpen");
+function closeMenu() { menu.hidden = true; openBtn.setAttribute("aria-expanded", "false"); if (lb.hidden) document.body.style.overflow = ""; }
+openBtn.addEventListener("click", () => { menu.hidden = false; openBtn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; });
+$("#menuClose").addEventListener("click", closeMenu);
+addEventListener("scroll", () => $("#siteHeader").classList.toggle("scrolled", scrollY > 8), { passive: true });
+
+$("#logo").textContent = $("#logo2").textContent = SITE.name;
+$("#copyright").textContent = `© 2026 ${SITE.name}`;
+addEventListener("hashchange", render);
+render();
+</script>
+
+</body></html>
